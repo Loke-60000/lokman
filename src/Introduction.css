@@ -1,0 +1,10 @@
+.bio-container{
+    color: white;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ffff !important;
+    border-color: #ffff !important;
+    opacity: 1;
+  }

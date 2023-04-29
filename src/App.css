@@ -1,0 +1,58 @@
+:root {
+    --main-bg-color: whitesmoke;
+    --table-border-color: #ccc;
+    --table-max-width: 1000px;
+    --table-cell-padding: 20px;
+    --table-margin-top: 10%;
+    --media-query-breakpoint: 767px;
+    --table-bg-image: url('./assets/bg_pagebody.jpg');
+  }
+
+  body{
+    background-image: url('./assets/bg_body.jpg');
+  }
+  
+  .App {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .table-container {
+    width: 100%;
+    margin-top: var(--table-margin-top);
+  }
+  
+  table {
+    width: 100%;
+    max-width: var(--table-max-width);
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 1px solid var(--table-border-color);
+  }
+  
+  .table-container table td {
+    /* background-color: var(--main-bg-color); */
+    background-image: var(--table-bg-image);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  td {
+    vertical-align: top;
+    padding: var(--table-cell-padding);
+    border: 1px solid var(--table-border-color);
+  }
+  
+  @media screen and (max-width: var(--media-query-breakpoint)) {
+    table {
+      width: 100%;
+    }
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  

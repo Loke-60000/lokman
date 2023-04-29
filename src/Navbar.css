@@ -1,0 +1,20 @@
+.nav-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+  
+.nav-centered .nav-link {
+margin: 0 10px;
+}
+
+.nav-centered .nav-link{
+    color: white;
+}
+
+.nav-centered .nav-link:hover {
+    color: #ff6b81; /* Change the color to your desired value */
+}
+  
