@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import MainNavbar from './components/NavBar';
 import Introduction from './pages/Introduction';
 
@@ -19,7 +20,6 @@ function App() {
                 <td>
                   <Routes>
                     <Route path="/" element={<Introduction />} />
-          
                   </Routes>
                 </td>
               </tr>
@@ -27,6 +27,9 @@ function App() {
           </table>
         </div>
       </Router>
+      <div className='copyrights'>
+        <p>2023 Lokman RAMDANI</p>
+      </div>
     </div>
   );
 }

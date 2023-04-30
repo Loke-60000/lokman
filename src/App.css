@@ -5,11 +5,13 @@
     --table-cell-padding: 20px;
     --table-margin-top: 10%;
     --media-query-breakpoint: 767px;
-    --table-bg-image: url('./assets/bg_pagebody.jpg');
+    --table-bg-image: url('./assets/images/bg_pagebody.jpg');
+
   }
 
   body{
-    background-image: url('./assets/bg_body.jpg');
+    background-image: url('./assets/images/bg_body.jpg');
+    font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
   }
   
   .App {
@@ -56,3 +58,10 @@
     padding: 0;
   }
   
+
+.copyrights p{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
