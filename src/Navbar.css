@@ -14,7 +14,28 @@ margin: 0 10px;
     color: white;
 }
 
-.nav-centered .nav-link:hover {
-    color: #ff6b81; /* Change the color to your desired value */
-}
+.nav-centered .nav-link .japanese-text {
+    transition: text-shadow 0.2s ease-in-out;
+  }
+  
+  .nav-centered .nav-link:hover .japanese-text {
+    color: inherit;
+    text-shadow:
+      0 0 5px #ff6b81,
+      0 0 10px #ff6b81,
+      0 0 15px #ff6b81,
+      0 0 20px #ff6b81,
+      0 0 30px #ff6b81,
+      0 0 40px #ff6b81,
+      0 0 50px #ff6b81,
+      0 0 75px #ff6b81;
+  }
+  
+  .nav-centered .nav-link .english-text {
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .nav-centered .nav-link:hover .english-text {
+    color: #ff6b81;
+  }
   

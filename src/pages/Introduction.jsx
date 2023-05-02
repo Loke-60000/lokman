@@ -72,7 +72,7 @@ const Introduction = () => {
             <div className="project-container">
               <a href="https://www.example.com/amadeus">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
-                <span>Amadeus Fan-Project Realisation 2.0 (name subject to change)</span>
+                <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
               </a>
             </div>
             <div className="project-container">

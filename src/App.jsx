@@ -1,8 +1,8 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import MainNavbar from './components/NavBar';
 import Introduction from './pages/Introduction';
+import ContactPage from './pages/Contact';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
                 <td>
                   <Routes>
                     <Route path="/" element={<Introduction />} />
+                    <Route path="/lokman/contact" element={<ContactPage />} />
                   </Routes>
                 </td>
               </tr>

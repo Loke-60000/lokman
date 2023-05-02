@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,16 +9,20 @@ const MainNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto nav-centered">
-              <Nav.Link href="">作品紹介 <br/> Introduction</Nav.Link>
-              <Nav.Link href="">ブログ <br/> Blog</Nav.Link>
-              <Nav.Link href="">ギットハブ <br/> Github</Nav.Link>
-              <Nav.Link href="">プロジェクト <br/> Projects</Nav.Link>
-              <Nav.Link href="">リンク <br/> Links</Nav.Link>
-              <Nav.Link href="">コンタクト <br/> Contact</Nav.Link>
+              <Nav.Item>
+                <Link className="nav-link" to="/"><span className="japanese-text">作品紹介</span> <br/> <span className="english-text">Introduction</span></Link>
+              </Nav.Item>
+              <Nav.Link href="/lokman/blog"><span className="japanese-text">ブログ</span> <br/> <span className="english-text">Blog</span></Nav.Link>
+              <Nav.Link href="/lokman/github"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span></Nav.Link>
+              <Nav.Link href="/lokman/projects"><span className="japanese-text">プロジェクト</span> <br/> <span className="english-text">Projects</span></Nav.Link>
+              <Nav.Link href="/lokman/links"><span className="japanese-text">リンク</span> <br/> <span className="english-text">Links</span></Nav.Link>
+              <Nav.Item>
+                <Link className="nav-link" to="/lokman/contact"><span className="japanese-text">コンタクト</span> <br/> <span className="english-text">Contact</span></Link>
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      );
+    );
 };
 
 export default MainNavbar;

@@ -33,10 +33,30 @@
     text-align: center;
     max-width: 250px;
     word-wrap: break-word;
-  }
+}
   
+.project_icons {
+  height: 150px;
+  border: solid 2px white;
+}
+
+@media (max-width: 767px) {
+  .news-icons-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 2rem;
+  }
+
+  .Projectsicon {
+    align-items: center;
+    grid-row: 2;
+  }
+
+
+
   .project_icons {
-    height: 150px;
-    border: solid 2px white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+}
