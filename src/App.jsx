@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import MainNavbar from './components/NavBar';
+import Divergencemeter from './components/DivergenceMeter';
 import Introduction from './pages/Introduction';
 import ContactPage from './pages/Contact';
 
@@ -13,7 +14,7 @@ function App() {
             <tbody>
               <tr>
                 <td>
-                  <MainNavbar />
+                  <MainNavbar />               
                 </td>
               </tr>
               <tr>
@@ -30,6 +31,9 @@ function App() {
       </Router>
       <div className='copyrights'>
         <p>2023 Lokman RAMDANI</p>
+      </div>
+      <div className='nixie_clock'>
+        <Divergencemeter/>
       </div>
     </div>
   );

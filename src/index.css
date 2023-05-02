@@ -1,4 +1,5 @@
-@import url('./Navbar.css');
-@import url('./Introduction.css');
-@import url('./App.css');
-@import url('./Contact.css');
+@import url('./styles/Navbar.css');
+@import url('./styles/Introduction.css');
+@import url('./styles/App.css');
+@import url('./styles/Contact.css');
+@import url('./styles/nixie.css');
