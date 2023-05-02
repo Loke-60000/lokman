@@ -6,7 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const MainNavbar = () => {
     return (
         <Navbar expand="lg" className="bg-transparent">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ color: 'white' }} />
+
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto nav-centered">
               <Nav.Item>
