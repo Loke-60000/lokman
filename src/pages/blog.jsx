@@ -27,7 +27,7 @@ const ConfirmModal = ({ isOpen, onClose, onConfirm }) => {
 };
 
 const Blog = () => {
-  const [isAuth, setIsAuth, loading] = useAuth();
+  const [email, loading] = useAuth();
   const [postLists, setPostList] = useState([]);
   const postCollectionRef = collection(db, 'posts');
 
@@ -35,10 +35,11 @@ const Blog = () => {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
       const posts = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      console.log(posts);
-      setPostList(posts);
+      const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      console.log(sortedPosts);
+      setPostList(sortedPosts);
     };
-
+    
     getPosts();
   }, []);
 
@@ -66,15 +67,13 @@ const Blog = () => {
     closeModal();
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const isAllowedUser = email === 'ramdani.lokman@gmail.com';
 
   return (
     <>
-      <Login isAuth={isAuth} setIsAuth={setIsAuth} />
-      <Logout isAuth={isAuth} setIsAuth={setIsAuth} />
-      <Createpost />
+      <Login isAuth={!!email} />
+      <Logout isAuth={!!email} />
+      {isAllowedUser && <Createpost />}
       <ConfirmModal
         isOpen={modalIsOpen}
         onClose={closeModal}
@@ -83,7 +82,7 @@ const Blog = () => {
       <div>
         {postLists.map((post) => (
           <div className="post" key={post.id}>
-            <button onClick={() => openModal(post.id)}>delete</button>
+            {isAllowedUser && <button onClick={() => openModal(post.id)}>delete</button>}
             <Link to={`/post/${post.id}`}>
               <h1>{post.title}</h1>
             </Link>

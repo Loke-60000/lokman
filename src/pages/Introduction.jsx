@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import CarouselComponent from '../components/Carousel';
-import Amadeus_icon from '../assets/images/amadeus.jpg'
-import Rakugaki_icon from '../assets/images/rakugaki.jpg'
+import Amadeus_icon from '../assets/images/amadeus.jpg';
+import Rakugaki_icon from '../assets/images/rakugaki.jpg';
+import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
+import { db } from '../firebase-config';
 
 const Introduction = () => {
-  
+  const [lastTenPosts, setLastTenPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchLastTenPosts = async () => {
+      const postQuery = query(collection(db, 'posts'), orderBy('createdAt', 'desc'), limit(10));
+      const postSnapshot = await getDocs(postQuery);
+      const posts = postSnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setLastTenPosts(posts);
+    };
+
+    fetchLastTenPosts();
+  }, []);
+
   const carouselImages = [
     {
       src: 'https://via.placeholder.com/900x200',
@@ -56,16 +71,13 @@ const Introduction = () => {
           <div>
             <h1>News:</h1>
             <ul>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
-              <li>lorem</li>
+              {lastTenPosts.map((post) => (
+                <li key={post.id}>
+                  <Link to={`/post/${post.id}`}>
+                    {new Date(post.createdAt).toLocaleDateString()} - {post.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="Projectsicon">

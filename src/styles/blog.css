@@ -1,63 +1,73 @@
 .createPostPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-  }
-  
-  .cpContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .inputGp,
-  .inputGP {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-  
-  label {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  input,
-  textarea {
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none;
-    width: 100%;
-  }
-  
-  textarea {
-    min-height: 150px;
-  }
-  
-  .submitPostBtn {
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #4caf50;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submitPostBtn:hover {
-    background-color: #45a049;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.inputGp,
+.inputGP {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #0094ff;
+}
+
+.post h1{
+  color: white;
+  text-decoration: none;
+}
+
+.post h3{
+  color: #a5a5a5;
+  font-size: medium;
+  opacity: 0.5;
+}
+
+.post p{
+  color: white;
+  font-size: medium;
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-content button {
+  margin-left: auto;
+}
+
+.post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+}

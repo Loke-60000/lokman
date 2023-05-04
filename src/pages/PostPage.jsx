@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase-config';
+import YouTube from 'react-youtube';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -31,14 +32,29 @@ const PostPage = () => {
     return <div>Loading...</div>;
   }
 
+  const videoId = getYouTubeVideoId(post.postText);
+
   return (
     <div className="post-page">
       <h1>{post.title}</h1>
-      <p>{post.postText}</p>
+      {videoId ? (
+        <YouTube videoId={videoId} />
+      ) : (
+        <div dangerouslySetInnerHTML={{ __html: post.postText }} />
+      )}
       <h3>@{post.author.name}</h3>
       <p>{new Date(post.createdAt).toLocaleString()}</p>
     </div>
   );
+};
+
+const getYouTubeVideoId = (text) => {
+  const regex = /https:\/\/www.youtube.com\/watch\?v=([\w-]{11})/;
+  const match = text.match(regex);
+  if (match) {
+    return match[1];
+  }
+  return null;
 };
 
 export default PostPage;
