@@ -4,6 +4,7 @@ import Amadeus_icon from '../assets/images/amadeus.jpg'
 import Rakugaki_icon from '../assets/images/rakugaki.jpg'
 
 const Introduction = () => {
+  
   const carouselImages = [
     {
       src: 'https://via.placeholder.com/900x200',
