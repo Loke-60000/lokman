@@ -4,7 +4,22 @@
 @import url('./styles/Contact.css');
 @import url('./styles/nixie.css');
 
-* {
+
+/* rules you have to add if you dont want them to touch something... like the divergence meter... */
+/* * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+} */
+
+/* make the divergence meter and images unclickable/draggable */
+img,
+.nixie__digit,
+.nixie__dot {
+  pointer-events: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -13,9 +28,13 @@
   user-select: none;
 }
 
-/* Add the pointer-events rule only to specific elements */
-img,
-.nixie__digit,
-.nixie__dot {
-  pointer-events: none;
+/* prevent the user from selecting the text on the navbar because... well it doesnt look good */
+.navbar,
+.navbar-nav,
+.nav-link {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
