@@ -3,7 +3,7 @@
 @import url('./styles/App.css');
 @import url('./styles/Contact.css');
 @import url('./styles/nixie.css');
-@import url('./styles/blog.css')
+@import url('./styles/blog.css');
 
 
 /* rules you have to add if you dont want them to touch something... like the divergence meter... */
