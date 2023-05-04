@@ -15,7 +15,7 @@ const MainNavbar = () => {
               </Nav.Item>
 
               <Nav.Item>
-                <Link className="nav-link" to="/lokman/blog"><span className="japanese-text">ブログ</span> <br/> <span className="english-text">Blog</span></Link>
+                <Link className="nav-link" to="/lokman/blog"><span className="japanese-text">ニュース</span> <br/> <span className="english-text">News</span></Link>
               </Nav.Item>
 
               <Nav.Link href="/lokman/github"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span></Nav.Link>
