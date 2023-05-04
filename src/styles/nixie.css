@@ -1,35 +1,92 @@
-@import url(https://fonts.googleapis.com/css?family=Muli:300);
-
-.nixie__wrapper
-{
-    padding: 7px;
-    position: relative;
-
-    background: #000;
-    overflow: hidden;
-}
-
-.nixie__value
-{
-    font-family: 'Muli', sans-serif;
+@font-face {
+    font-family: 'BONX-Bold';
+    src: url('../assets/fonts/BONX-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'BONX-Medium';
+    src: url('../assets/fonts/BONX-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'BONX-AltMedium';
+    src: url('../assets/fonts/BONX-AltMedium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .nixie__value {
+    font-family: 'BONX-Medium', sans-serif;
     text-align: center;
-    text-shadow:
-        0 0 5px #FCFA36,
-        0 0 7px #FC9836,
-        0 0 20px #FF3C3C,
-        0 0 25px #FF3C3C;
-    color: #FEDB01;
-}
-
-.nixie__mesh
-{
+    text-shadow: 0 0 5px #dc520f, 0 0 7px #9a2605, 0 0 20px #FF3C3C, 0 0 25px #FF3C3C;
+    color: #f2ad0e;
+  }
+  
+  .nixie__digit-container {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nixie__number-background {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    background-image: url(${tubeImage});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: scale(1.5);
+  }
+  
+  .nixie__digit {
+    position: relative;
+    z-index: 1;
+    margin: 2px;
+  }
+  
+  .nixie__dot {
+    font-family: 'BONX-AltMedium', sans-serif;
+    position: relative;
+    z-index: 1;
+    margin: 2.5px;
+  }
+  
+  .nixie__digit-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  
 
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAAMklEQVQIW2NkQAJmDAxnYNxTDAwmyHKMMA5IEbIkOh+sEF0Qm2ZGXIqQFYPYxJtIrBsBdYoVCa7CTHkAAAAASUVORK5CYII=) repeat;
-}
+  @media (max-width: 480px) {
+    .nixie__digit, .nixie__dot {
+      font-size: 24px;
+    }
+  }
+  
+
+  .nixie__digit, .nixie__dot {
+    font-size: 48px;
+    line-height: 1;
+    animation: flicker 0.2s infinite alternate;
+    animation-delay: calc(var(--delay) * 2ms);
+  }
+  
+  @keyframes flicker {
+    from {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+  

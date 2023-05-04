@@ -3,3 +3,19 @@
 @import url('./styles/App.css');
 @import url('./styles/Contact.css');
 @import url('./styles/nixie.css');
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Add the pointer-events rule only to specific elements */
+img,
+.nixie__digit,
+.nixie__dot {
+  pointer-events: none;
+}
