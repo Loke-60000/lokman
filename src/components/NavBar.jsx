@@ -11,7 +11,7 @@ const MainNavbar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto nav-centered">
               <Nav.Item>
-                <Link className="nav-link" to="/"><span className="japanese-text">作品紹介</span> <br/> <span className="english-text">Introduction</span></Link>
+                <Link className="nav-link" to="/lokman/introduction"><span className="japanese-text">作品紹介</span> <br/> <span className="english-text">Introduction</span></Link>
               </Nav.Item>
 
               <Nav.Item>

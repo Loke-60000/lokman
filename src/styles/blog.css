@@ -1,96 +1,55 @@
-.createPostPage {
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
   padding: 20px;
-}
-
-.cpContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.inputGp,
-.inputGP {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  padding: 5px;
-  font-size: 16px;
-  width: 100%;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  outline: none;
+  width: 300px;
 }
 
-input:focus {
-  border-color: #0094ff;
-}
-
-.post h1{
-  color: white;
-  text-decoration: none;
-}
-
-.post h3{
-  color: #a5a5a5;
-  font-size: medium;
-  opacity: 0.5;
-}
-
-.post p{
-  color: white;
-  font-size: medium;
-}
-
-.post-content {
+.modal-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.post-content button {
-  margin-left: auto;
+.post {
+  margin-bottom: 20px;
 }
 
-.post-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  color: white;
-  font-family: Arial, sans-serif;
+.post h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-
-.comment {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+.post h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.comment-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+.post p {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.comment-author-photo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 1rem;
+.ql-container {
+  min-height: 300px;
+  background-color: #ffffff;
+  color: black;
+  margin-bottom: 5%;
+}
+
+.ql-toolbar {
+  background-color: #ffffff;
+  color: black;
 }

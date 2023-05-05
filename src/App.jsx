@@ -9,6 +9,8 @@ import Login from './pages/Login';
 import Createpost from './pages/CreatePost';
 import DebugNavbar from './components/DebugNav';
 import PostPage from './pages/PostPage';
+import ModeratorPage from './pages/Moderator';
+import EditPost from './pages/EditPost';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -28,12 +30,14 @@ function App() {
                 <td>
                   <Routes>
                   <Route path="/" element={<Introduction />} />
+                  <Route path="/lokman/introduction" element={<Introduction />} />
                   <Route path="/lokman/contact" element={<ContactPage />} />
                   <Route path="/lokman/blog" element={<Blog />} />
                   <Route path="/lokman/createpost" element={<Createpost />} />
                   <Route path="/lokman/login" element={<Login setIsAuth={setIsAuth} />} />
                   <Route path="/post/:id" element={<PostPage />} />
-
+                  <Route path="/edit/:postId" element={<EditPost />} />
+                  <Route path="/lokman/moderator" element={<ModeratorPage />} />
                   </Routes>
                 </td>
               </tr>

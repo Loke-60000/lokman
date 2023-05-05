@@ -6,6 +6,7 @@
 @import url('./styles/blog.css');
 
 
+
 /* rules you have to add if you dont want them to touch something... like the divergence meter... */
 /* * {
   -webkit-touch-callout: none;

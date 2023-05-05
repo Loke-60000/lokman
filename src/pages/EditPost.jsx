@@ -1,40 +1,53 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { addDoc, collection } from 'firebase/firestore';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import '../styles/blog.css';
+import { getDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { Modal, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-const CreatePost = () => {
+const EditPost = () => {
+  const { postId } = useParams();
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [postText, setPostText] = useState('');
   const [titleError, setTitleError] = useState('');
 
-  const createPost = async () => {
+  const postDocRef = doc(db, 'posts', postId);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      const postDoc = await getDoc(postDocRef);
+      if (postDoc.exists()) {
+        const postData = postDoc.data();
+        setTitle(postData.title);
+        setPostText(postData.postText);
+      } else {
+        navigate('/not-found');
+      }
+    };
+
+    fetchPost();
+  }, [postId, navigate]);
+
+  const updatePost = async () => {
     if (title.trim() === '') {
       setTitleError('Title field is required.');
       return;
     }
-    const newPost = {
+    await updateDoc(postDocRef, {
       title,
       postText,
-      createdAt: new Date().toISOString(),
-      author: {
-        name: 'Your Name', // Replace with the actual author's name
-      },
-    };
-
-    await addDoc(collection(db, 'posts'), newPost);
-    navigate('/lokman/blog');
+    });
+    navigate(`/post/${postId}`);
   };
 
   return (
-    <div className="createPostPage">
-      <h1>Create Post</h1>
-      <div className="cpContainer">
+    <div className="editPostPage">
+      <h1>Edit Post</h1>
+      <div className="epContainer">
         <Form>
           <Form.Group controlId="formTitle">
             <Form.Label>Title:</Form.Label>
@@ -57,12 +70,12 @@ const CreatePost = () => {
             />
           </Form.Group>
         </Form>
-        <Button variant="primary" onClick={createPost}>
-          Create Post
+        <Button variant="primary" onClick={updatePost}>
+          Save Changes
         </Button>
       </div>
     </div>
   );
 };
 
-export default CreatePost;
+export default EditPost;
