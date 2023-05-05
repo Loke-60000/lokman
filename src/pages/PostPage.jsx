@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDoc, doc, collection, query, where, addDoc } from 'firebase/firestore';
+import { getDoc, doc, collection, query, where, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase-config';
+import useAuth from '../hooks/useAuth';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -10,6 +11,9 @@ const PostPage = () => {
   const [authorName, setAuthorName] = useState('');
   const [commentText, setCommentText] = useState('');
   
+  const [user, loading] = useAuth();
+  const [editedUsername, setEditedUsername] = useState('');
+
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -41,6 +45,12 @@ const PostPage = () => {
     fetchComments();
   }, [id]);
 
+  useEffect(() => {
+    if (user) {
+      setAuthorName(user.displayName || '');
+    }
+  }, [user]);
+
   const handleSubmitComment = async (event) => {
     event.preventDefault();
 
@@ -52,6 +62,7 @@ const PostPage = () => {
       await addDoc(collection(db, 'comments'), {
         postId: id,
         authorName,
+        authorPhotoURL: user.photoURL || '',
         commentText,
         createdAt: new Date().toISOString(),
       });
@@ -76,47 +87,50 @@ const PostPage = () => {
 
       <div className="comments-section">
         <h2>Comments</h2>
-    <form onSubmit={handleSubmitComment}>
-      <div className="form-group">
-        <label htmlFor="authorName">Name:</label>
-        <input
-          type="text"
-          className="form-control"
-          id="authorName"
-          value={authorName}
-          onChange={(event) => setAuthorName(event.target.value)}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="commentText">Comment:</label>
-        <textarea
-          className="form-control"
-          id="commentText"
-          value={commentText}
-          onChange={(event) => setCommentText(event.target.value)}
-          required
-        ></textarea>
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
-    </form>
+        <form onSubmit={handleSubmitComment}>
+          <div className="form-group">
+            <label htmlFor="authorName">Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="authorName"
+              value={authorName}
+              onChange={(event) => setAuthorName(event.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="commentText">Comment:</label>
+            <textarea
+              className="form-control"
+              id="commentText"
+              value={commentText}
+              onChange={(event) => setCommentText(event.target.value)}
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
 
-    <div className="comments-list">
-  {comments.map((comment) => (
-    <div className="comment" key={comment.id}>
-      <div className="comment-header">
-        <span className="comment-author">{comment.authorName}</span>
-        <span className="comment-date">{new Date(comment.createdAt).toLocaleString()}</span>
+        <div className="comments-list">
+          {comments.map((comment) => (
+            <div className="comment" key={comment.id}>
+              <div className="comment-header">
+                {comment.authorPhotoURL && (
+                  <img className="comment-author-photo" src={comment.authorPhotoURL} alt="Profile" />
+                )}
+                <span className="comment-author">{comment.authorName}</span>
+                <span className="comment-date">{new Date(comment.createdAt).toLocaleString()}</span>
+              </div>
+              <div className="comment-body">{comment.commentText}</div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="comment-body">{comment.commentText}</div>
     </div>
-  ))}
-</div>
-  </div>
-</div>
-);
+  );
 };
 
 export default PostPage;
