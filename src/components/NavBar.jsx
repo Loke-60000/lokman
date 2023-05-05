@@ -18,7 +18,7 @@ const MainNavbar = () => {
                 <Link className="nav-link" to="/lokman/blog"><span className="japanese-text">ニュース</span> <br/> <span className="english-text">News</span></Link>
               </Nav.Item>
 
-              <Nav.Link href="/lokman/github"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span></Nav.Link>
+              <Nav.Link href="https://github.com/Loke-60000" target="_blank" rel="noopener noreferrer"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span></Nav.Link>
               <Nav.Link href="/lokman/projects"><span className="japanese-text">プロジェクト</span> <br/> <span className="english-text">Projects</span></Nav.Link>
               <Nav.Item>
                 <Link className="nav-link" to="/lokman/links"><span className="japanese-text">リンクス</span> <br/> <span className="english-text">Links</span></Link>
