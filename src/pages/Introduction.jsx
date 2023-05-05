@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CarouselComponent from '../components/Carousel';
 import Amadeus_icon from '../assets/images/amadeus.jpg';
 import Rakugaki_icon from '../assets/images/rakugaki.jpg';
+import Atchan_icon from '../assets/images/atchan.jpg';
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
@@ -86,6 +87,12 @@ const Introduction = () => {
               <a href="https://www.example.com/amadeus">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
                 <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
+              </a>
+            </div>
+            <div className="project-container">
+              <a href="https://www.example.com/@chan">
+                <img className="project_icons" src={Atchan_icon} alt="@Chan" />
+                <span>@Chan (still in development)</span>
               </a>
             </div>
             <div className="project-container">

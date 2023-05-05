@@ -30,6 +30,7 @@ const Blog = () => {
   const [email, loading] = useAuth();
   const [postLists, setPostList] = useState([]);
   const postCollectionRef = collection(db, 'posts');
+  const [isAdminMode, setIsAdminMode] = useState(false);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -67,13 +68,27 @@ const Blog = () => {
     closeModal();
   };
 
-  const isAllowedUser = email === 'ramdani.lokman@gmail.com';
+  const toggleAdminMode = () => {
+    if (email === 'ramdani.lokman@gmail.com') {
+      setIsAdminMode(!isAdminMode);
+    }
+  };
+
+  const isAdmin = email === 'ramdani.lokman@gmail.com';
+  const showAdminControls = isAdmin && isAdminMode;
 
   return (
     <>
       <Login isAuth={!!email} />
       <Logout isAuth={!!email} />
-      {isAllowedUser && <Createpost />}
+      <div>
+        {isAdmin && (
+          <button onClick={toggleAdminMode}>
+            {isAdminMode ? 'View as Normal User' : 'View as Admin'}
+          </button>
+        )}
+      </div>
+      {showAdminControls && <Createpost />}
       <ConfirmModal
         isOpen={modalIsOpen}
         onClose={closeModal}
@@ -82,7 +97,9 @@ const Blog = () => {
       <div>
         {postLists.map((post) => (
           <div className="post" key={post.id}>
-            {isAllowedUser && <button onClick={() => openModal(post.id)}>delete</button>}
+            {showAdminControls && (
+              <button onClick={() => openModal(post.id)}>delete</button>
+            )}
             <Link to={`/post/${post.id}`}>
               <h1>{post.title}</h1>
             </Link>
@@ -95,5 +112,6 @@ const Blog = () => {
     </>
   );
 };
+
 
 export default Blog;
