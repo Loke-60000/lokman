@@ -35,10 +35,10 @@ const PostPage = () => {
 
   return (
     <div className="post-page">
+      <p>{new Date(post.createdAt).toLocaleString()}</p>
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.postText }} />
-      <h3>@{post.author.name}</h3>
-      <p>{new Date(post.createdAt).toLocaleString()}</p>
+      {/* <h3>@{post.author.name}</h3> */}
     </div>
   );
 };

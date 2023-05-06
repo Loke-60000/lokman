@@ -26,7 +26,7 @@ const Blog = () => {
           <Link to={`/post/${post.id}`}>
             <h1>{post.title}</h1>
           </Link>
-          <h3>@{post.author.name}</h3>
+          {/* <h3>@{post.author.name}</h3>   */}
           <p>{new Date(post.createdAt).toLocaleString()}</p>
           <hr />
         </div>

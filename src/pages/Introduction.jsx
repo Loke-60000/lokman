@@ -4,6 +4,7 @@ import CarouselComponent from '../components/Carousel';
 import Amadeus_icon from '../assets/images/amadeus.jpg';
 import Rakugaki_icon from '../assets/images/rakugaki.jpg';
 import Atchan_icon from '../assets/images/atchan.jpg';
+import banner_one from '../assets/images/welcome_banner.jpg';
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
@@ -23,9 +24,9 @@ const Introduction = () => {
 
   const carouselImages = [
     {
-      src: 'https://via.placeholder.com/900x200',
-      alt: 'First slide',
-      caption: 'insert text 1',
+      src: banner_one,
+      alt: 'Welcome',
+      caption: '',
     },
     {
       src: 'https://via.placeholder.com/900x200',
