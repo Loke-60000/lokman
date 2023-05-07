@@ -18,12 +18,14 @@
     "firebase": "^9.21.0",
     "gh-pages": "^5.0.0",
     "jquery": "^3.6.4",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.11.0",
-    "react-youtube": "^10.1.0"
+    "react-youtube": "^10.1.0",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
