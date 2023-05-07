@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/nixie.css';
-import tubeImage from '../assets/images/divergence_meter_tube.png';
+import tubeImage from '../assets/images/divergence_meter_tube.webp';
 
 function Divergencemeter() {
     const [time, setTime] = useState(new Date());

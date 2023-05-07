@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CarouselComponent from '../components/Carousel';
-import Amadeus_icon from '../assets/images/amadeus.jpg';
-import Rakugaki_icon from '../assets/images/rakugaki.jpg';
-import Atchan_icon from '../assets/images/atchan.jpg';
-import banner_one from '../assets/images/welcome_banner.jpg';
-import banner_two from '../assets/images/atchan_banner.jpg';
-import banner_three from '../assets/images/construction_banner.jpg'
+import Amadeus_icon from '../assets/images/amadeus.webp';
+import Rakugaki_icon from '../assets/images/rakugaki.webp';
+import Atchan_icon from '../assets/images/atchan.webp';
+import banner_one from '../assets/images/welcome_banner.webp';
+import banner_two from '../assets/images/atchan_banner.webp';
+import banner_three from '../assets/images/construction_banner.webp'
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 

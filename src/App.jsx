@@ -7,7 +7,6 @@ import ContactPage from './pages/Contact';
 import Blog from './pages/blog';
 import Login from './pages/Login';
 import Createpost from './pages/CreatePost';
-import DebugNavbar from './components/DebugNav';
 import PostPage from './pages/PostPage';
 import ModeratorPage from './pages/Moderator';
 import EditPost from './pages/EditPost';
