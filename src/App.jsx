@@ -32,16 +32,16 @@ function App() {
                 <td className='main_content'>
                   <Routes>
                     <Route path="/" element={<Introduction />} />
-                    <Route path="/lokman/introduction" element={<Introduction />} />
-                    <Route path="/lokman/contact" element={<ContactPage />} />
-                    <Route path="/lokman/blog" element={<Blog />} />
-                    <Route path="/lokman/createpost" element={<Createpost />} />
-                    <Route path="/lokman/login" element={<Login setIsAuth={setIsAuth} />} />
+                    <Route path="/introduction" element={<Introduction />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/createpost" element={<Createpost />} />
+                    <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
                     <Route path="/post/:id" element={<PostPage />} />
                     <Route path="/edit/:postId" element={<EditPost />} />
-                    <Route path="/lokman/moderator" element={<ModeratorPage />} />
-                    <Route path="/lokman/links" element={<Links />} />
-                    <Route path="/lokman/projects" element={<Projects />} />
+                    <Route path="/moderator" element={<ModeratorPage />} />
+                    <Route path="/links" element={<Links />} />
+                    <Route path="/projects" element={<Projects />} />
                   </Routes>
                 </td>
               </tr>
