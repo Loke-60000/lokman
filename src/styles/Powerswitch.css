@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam&display=swap');
+
+.checkboxGroup{ display:inline-block; vertical-align:middle; width:150px; border:none; filter: grayscale(1);}
+
+.checkboxControl{ 
+	border:1.5px solid #102838; border-radius:7px; display:inline-block; width:100px; height:53px; position:relative; vertical-align:middle;  ; color:#297597;
+	box-shadow: 0 0 5px rgba(255,255,255,.4), 
+				0 2px 1px -1px rgba(255,255,255,.7) inset, 
+				8px 0 5px -5px #02425C inset,
+				-8px 0 5px -5px #02425C inset;
+	-moz-user-select:none; -webkit-user-select:none; 
+	background:#80DCE9;
+}
+.checkboxControl input{ position:absolute; visibility:hidden;}
+.checkboxControl > div{ 
+	background:-webkit-linear-gradient(left, #8FD9E4 0%,#A0F2FE 53%,#69DCF1 56%,#33AFCE 99%,#CEF5FF 100%);
+	background:linear-gradient(to right, #8FD9E4 0%,#A0F2FE 53%,#69DCF1 56%,#33AFCE 99%,#CEF5FF 100%);
+	box-shadow:-2px 0 1px 0 #A6F2FE inset;
+	border-radius:5px; line-height:50px; font-weight:bold; cursor:pointer; position:relative; z-index:1; text-shadow:0 1px rgba(255,255,255,0.5);
+	transform-origin:0 0; -webkit-transform-origin:0 0; 
+	transform:scaleX(0.93); -webkit-transform:scaleX(0.93);
+	transition:.1s; -webkit-transition:0.1s;
+}
+.checkboxControl div:first-letter{ letter-spacing:55px; }
+
+.checkboxControl :checked ~ div{ 
+	transform-origin:100% 0; -webkit-transform-origin:100% 0;
+	box-shadow:2px 0 1px 0 #A6F2FE inset;
+	background:-webkit-linear-gradient(left, #CEF5FF 0%,#33AFCE 1%,#69DCF1 47%,#A0F2FE 50%,#8FD9E4 100%);
+	background:linear-gradient(to right, #CEF5FF 0%,#33AFCE 1%,#69DCF1 47%,#A0F2FE 50%,#8FD9E4 100%);
+}
+
+.centerContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30vh;
+	width: 100vw;
+  }
+  
+  .contentWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  .polaroid {
+	background: #fcfcfc;
+	box-shadow: 0 0 10px #101010;
+	width: 200px;
+	height: 100px;
+	margin-bottom: 40px;
+	position: relative;
+	pointer-events: none;
+  }
+  
+  .polaroid:before,
+  .polaroid:after {
+	width: 100px;
+	height: 40px;
+	display: block;
+	content: "";
+	background: hsla(40, 100%, 80%, 0.4);
+	position: absolute;
+  }
+  
+  .polaroid:before {
+	left: -35px;
+	top: -5px;
+	transform: rotate(-45deg);
+  }
+  
+  .polaroid:after {
+	right: -35px;
+	top: -5px;
+	transform: rotate(45deg);
+  }
+  
+  .polaroid figcaption {
+	font-family: 'Kalam', cursive;
+	font-size: 1.6em;
+	line-height: 1.3em;
+	text-align: center;
+	height: 3em;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  }
+  
+  .checkboxGroup {
+	display: inline-block;
+	vertical-align: middle;
+	width: 120px;
+  }

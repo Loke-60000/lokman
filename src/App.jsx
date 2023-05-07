@@ -13,6 +13,7 @@ import EditPost from './pages/EditPost';
 import Links from './pages/Links';
 import Projects from './pages/Projects';
 import './styles/scanlines.scss';
+import PowerSwitch from './components/Switch';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -71,8 +72,11 @@ function App() {
           </div>
         </Router>
         <div className="retro-mode-toggle">
-          <button onClick={toggleScanlines}>Retro Mode</button>
-        </div>
+          <PowerSwitch
+            isScanlinesActive={isScanlinesActive}
+            toggleScanlines={toggleScanlines}
+          />
+          </div>
         <div className="copyrights">
           <p>2023 Lokman RAMDANI</p>
         </div>
