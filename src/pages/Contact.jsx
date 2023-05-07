@@ -8,6 +8,9 @@ const ContactPage = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +24,8 @@ const ContactPage = () => {
       return;
     }
 
+    setIsSending(true);
+
     const templateParams = {
       from_name: name,
       from_email: email,
@@ -31,15 +36,16 @@ const ContactPage = () => {
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        window.REACT_APP_EMAILJS_SERVICE_ID,
+        window.REACT_APP_EMAILJS_TEMPLATE_ID,
         templateParams,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        window.REACT_APP_EMAILJS_USER_ID
       )
       .then(
         (result) => {
           console.log(result.text);
-          alert('Email sent successfully!');
+          setIsSending(false);
+          setIsSent(true);
           setName('');
           setEmail('');
           setPhone('');
@@ -49,7 +55,8 @@ const ContactPage = () => {
         },
         (error) => {
           console.log(error.text);
-          alert('There was an error sending your email. Please try again later.');
+          setIsSending(false);
+          setSendError('There was an error sending your email. Please try again later.');
         }
       );
   };
@@ -124,13 +131,28 @@ const ContactPage = () => {
             <div className="invalid-feedback">{errors.message}</div>
           )}
         </div>
-        <button type="submit" className="btn btn-primary">
-          Send
+        {isSending && (
+          <div className="alert alert-info" role="alert">
+            Sending your message...
+          </div>
+        )}
+        {isSent && (
+          <div className="alert alert-success" role="alert">
+            Your message has been sent. Thank you!
+          </div>
+        )}
+        {sendError && (
+          <div className="alert alert-danger" role="alert">
+            {sendError}
+          </div>
+        )}
+        <button type="submit" className="btn btn-primary" disabled={isSending}>
+          {isSending ? 'Sending...' : 'Send'}
         </button>
       </form>
     </div>
   );
   
-    };
-    
-    export default ContactPage;
+};
+
+export default ContactPage;

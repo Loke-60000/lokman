@@ -20,7 +20,11 @@ const Blog = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <div className='blog_title'>
+        <h1>NEWS:</h1>
+      </div>
+      <div className='post_list'>
       {postLists.map((post) => (
         <div className="post" key={post.id}>
           <Link to={`/post/${post.id}`}>
@@ -32,6 +36,8 @@ const Blog = () => {
         </div>
       ))}
     </div>
+    </>
+
   );
 };
 

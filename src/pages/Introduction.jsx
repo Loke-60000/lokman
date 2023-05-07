@@ -5,6 +5,8 @@ import Amadeus_icon from '../assets/images/amadeus.jpg';
 import Rakugaki_icon from '../assets/images/rakugaki.jpg';
 import Atchan_icon from '../assets/images/atchan.jpg';
 import banner_one from '../assets/images/welcome_banner.jpg';
+import banner_two from '../assets/images/atchan_banner.jpg';
+import banner_three from '../assets/images/construction_banner.jpg'
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
@@ -29,16 +31,31 @@ const Introduction = () => {
       caption: '',
     },
     {
-      src: 'https://via.placeholder.com/900x200',
-      alt: 'Second slide',
-      caption: 'insert text 2',
+      src: banner_two,
+      alt: 'atchan coming soon',
+      caption: '',
     },
     {
-      src: 'https://via.placeholder.com/900x200',
+      src: banner_three,
       alt: 'Third slide',
-      caption: 'insert text 3',
+      caption: '',
     },
   ];
+
+  const calculateAge = (birthdate) => {
+    const birthDate = new Date(birthdate);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  };
+
+  const age = calculateAge("2001-11-21");
 
   return (
       <div>
@@ -47,7 +64,7 @@ const Introduction = () => {
         <div className="bio-container">
           <h2>About Me</h2>
           <p>
-            Thank you for visiting my personal website! My name is Lokman RAMDANI, and I'm a 21-year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
+            Thank you for visiting my personal website! My name is Lokman RAMDANI, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
           </p>
           <h2>Education</h2>
           <ul>
@@ -85,25 +102,24 @@ const Introduction = () => {
           <div className="Projectsicon">
             <h1>Projects</h1>
             <div className="project-container">
-              <a href="https://www.example.com/amadeus">
+              <Link to="/lokman/projects">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
                 <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
-              </a>
+              </Link>
             </div>
             <div className="project-container">
-              <a href="https://www.example.com/@chan">
+              <Link to="/lokman/projects">
                 <img className="project_icons" src={Atchan_icon} alt="@Chan" />
                 <span>@Chan (still in development)</span>
-              </a>
+              </Link>
             </div>
             <div className="project-container">
-              <a href="https://www.example.com/rakugaki">
+              <Link to="/lokman/projects">
                 <img className="project_icons" src={Rakugaki_icon} alt="Rakugaki" />
                 <span>Rakugaki</span>
-              </a>
+              </Link>
             </div>
           </div>
-
         </div>
         
       </div>

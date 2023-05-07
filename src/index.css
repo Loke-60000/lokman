@@ -6,16 +6,10 @@
 @import url('./styles/blog.css');
 
 
-
-/* rules you have to add if you dont want them to touch something... like the divergence meter... */
-/* * {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-} */
+.post_list, .social-media-links-container{
+  color: white;
+  min-height: 100vh;
+}
 
 /* make the divergence meter and images unclickable/draggable */
 img,
@@ -30,6 +24,7 @@ img,
   user-select: none;
 }
 
+
 /* prevent the user from selecting the text on the navbar because... well it doesnt look good */
 .navbar,
 .navbar-nav,
@@ -40,7 +35,6 @@ img,
     -ms-user-select: none;
     user-select: none;
 }
-
 
 .modal {
   position: fixed;
@@ -70,4 +64,50 @@ img,
 
 button {
   cursor: pointer;
+}
+
+/* Make the arrows invisible */
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  opacity: 0;
+}
+
+/* Make the indicators (3 dots) invisible */
+.custom-carousel .carousel-indicators {
+  opacity: 0;
+}
+
+/* Add a white outline to the carousel */
+.custom-carousel {
+  border: 2px solid white;
+}
+
+.social-media-links-container {
+  padding: 40px;
+}
+
+.social-media-links-title {
+  color: white;
+  font-size: 32px;
+  text-align: center;
+}
+
+.social-media-links-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.social-media-links-list li {
+  margin: 20px;
+}
+
+.social-media-link {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
 }

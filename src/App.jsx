@@ -11,6 +11,8 @@ import DebugNavbar from './components/DebugNav';
 import PostPage from './pages/PostPage';
 import ModeratorPage from './pages/Moderator';
 import EditPost from './pages/EditPost';
+import Links from './pages/Links';
+import Projects from './pages/Projects';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -22,22 +24,24 @@ function App() {
           <table>
             <tbody>
               <tr>
-                <td>
+                <td> 
                   <MainNavbar />
                 </td>
               </tr>
               <tr>
-                <td>
+                <td className='main_content'>
                   <Routes>
-                  <Route path="/" element={<Introduction />} />
-                  <Route path="/lokman/introduction" element={<Introduction />} />
-                  <Route path="/lokman/contact" element={<ContactPage />} />
-                  <Route path="/lokman/blog" element={<Blog />} />
-                  <Route path="/lokman/createpost" element={<Createpost />} />
-                  <Route path="/lokman/login" element={<Login setIsAuth={setIsAuth} />} />
-                  <Route path="/post/:id" element={<PostPage />} />
-                  <Route path="/edit/:postId" element={<EditPost />} />
-                  <Route path="/lokman/moderator" element={<ModeratorPage />} />
+                    <Route path="/" element={<Introduction />} />
+                    <Route path="/lokman/introduction" element={<Introduction />} />
+                    <Route path="/lokman/contact" element={<ContactPage />} />
+                    <Route path="/lokman/blog" element={<Blog />} />
+                    <Route path="/lokman/createpost" element={<Createpost />} />
+                    <Route path="/lokman/login" element={<Login setIsAuth={setIsAuth} />} />
+                    <Route path="/post/:id" element={<PostPage />} />
+                    <Route path="/edit/:postId" element={<EditPost />} />
+                    <Route path="/lokman/moderator" element={<ModeratorPage />} />
+                    <Route path="/lokman/links" element={<Links />} />
+                    <Route path="/lokman/projects" element={<Projects />} />
                   </Routes>
                 </td>
               </tr>
@@ -51,7 +55,7 @@ function App() {
       <div>
       </div>
       <div className="nixie_clock">
-        <Divergencemeter/>
+        <Divergencemeter />
       </div>
     </div>
   );
