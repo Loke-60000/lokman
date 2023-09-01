@@ -5,6 +5,7 @@
 @import url('./styles/nixie.css');
 @import url('./styles/blog.css');
 @import url('./styles/Powerswitch.css');
+@import url('./styles/Links.css');
 
 
 .post_list, .social-media-links-container{
@@ -116,4 +117,80 @@ button {
 .retro-mode-toggle {
   text-align: center;
   margin-top: 20px;
+}
+
+
+
+
+
+/* ============================================== */
+
+
+
+/* Irasuto.css */
+
+/* Variable Colors */
+:root {
+  --irasuto-primary-color: #007BFF; /* Change this color to your preferred primary color */
+  --irasuto-secondary-color: #6C757D; /* Change this color to your preferred secondary color */
+  --irasuto-text-color: #333; /* Change this color to your preferred text color */
+}
+
+/* irasuto-IrasutoContainer styles */
+.irasuto-IrasutoContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* irasuto-Title styles */
+.irasuto-Title {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* irasuto-ImageTable styles */
+.irasuto-ImageTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* irasuto-TableHeader styles */
+.irasuto-TableHeader {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* irasuto-ImageCell styles */
+.irasuto-ImageCell {
+  padding: 10px;
+}
+
+/* irasuto-Image styles */
+.irasuto-Image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.errorNotFound{
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.errorNotFound h1,p{
+  color: white;
 }

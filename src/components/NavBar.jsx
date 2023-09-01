@@ -18,11 +18,22 @@ const MainNavbar = () => {
                 <Link className="nav-link" to="/blog"><span className="japanese-text">ニュース</span> <br/> <span className="english-text">News</span></Link>
               </Nav.Item>
 
-              <Nav.Link href="https://github.com/Loke-60000" target="_blank" rel="noopener noreferrer"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span></Nav.Link>
-              <Link className="nav-link" to="/projects"><span className="japanese-text">プロジェクト</span> <br/> <span className="english-text">Projects</span></Link>
+              <Nav.Link 
+                href="https://github.com/Loke-60000" target="_blank" rel="noopener noreferrer"><span className="japanese-text">ギットハブ</span> <br/> <span className="english-text">Github</span>
+              </Nav.Link>
+
+              <Link
+                className="nav-link" to="/projects"><span className="japanese-text">プロジェクト</span> <br/> <span className="english-text">Projects</span>
+              </Link>
+
+              <Nav.Item>
+                <Link className="nav-link" to="/illustrations"><span className="japanese-text">イラスト</span> <br/> <span className="english-text">Illustrations</span></Link>
+              </Nav.Item>
+
               <Nav.Item>
                 <Link className="nav-link" to="/links"><span className="japanese-text">リンクス</span> <br/> <span className="english-text">Links</span></Link>
               </Nav.Item>
+
               <Nav.Item>
                 <Link className="nav-link" to="/contact"><span className="japanese-text">コンタクト</span> <br/> <span className="english-text">Contact</span></Link>
               </Nav.Item>

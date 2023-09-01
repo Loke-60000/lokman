@@ -146,9 +146,11 @@ const ContactPage = () => {
             {sendError}
           </div>
         )}
-        <button type="submit" className="btn btn-primary" disabled={isSending}>
-          {isSending ? 'Sending...' : 'Send'}
-        </button>
+        <div className="contactButtonContainer">
+          <button type="submit" className="contactButton" disabled={isSending}>
+            {isSending ? 'Sending...' : 'Send'}
+          </button>
+        </div>
       </form>
     </div>
   );

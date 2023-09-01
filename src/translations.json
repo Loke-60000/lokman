@@ -1,0 +1,15 @@
+{
+    "en": {
+      "aboutMe": "About Me",
+      "education": "Education",
+      "workExperience": "Work Experience",
+      "interests": "Interests"
+    },
+    "fr": {
+      "aboutMe": "À propos de moi",
+      "education": "Éducation",
+      "workExperience": "Expérience professionnelle",
+      "interests": "Intérêts"
+    }
+  }
+  

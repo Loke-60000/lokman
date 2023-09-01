@@ -72,3 +72,33 @@
   outline: none;
   box-shadow: var(--primary-shadow);
 }
+
+.contactButtonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactButton{
+  background-color: #ff8c00;
+  color: white;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+  border: none;
+}
+
+.contactButton:hover{
+  background-color: #ff8c0083;
+}
+
+
+
+.form-group input:focus {
+  border: 3px solid #ff8c00;
+}
+
+textarea#message:focus {
+  border: 3px solid #ff8c00;
+}

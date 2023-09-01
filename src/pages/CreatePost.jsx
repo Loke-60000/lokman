@@ -23,22 +23,24 @@ const CreatePost = () => {
       postText,
       createdAt: new Date().toISOString(),
       author: {
-        name: 'Your Name', // Replace with the actual author's name
+        name: 'Lokman',
       },
     };
 
     await addDoc(collection(db, 'posts'), newPost);
-    navigate('/lokman/blog');
+    navigate('/');
   };
 
   return (
     <div className="createPostPage">
-      <h1>Create Post</h1>
+      <h1 className='adminTitle'>Create Post</h1>
       <div className="cpContainer">
         <Form>
           <Form.Group controlId="formTitle">
-            <Form.Label>Title:</Form.Label>
+            {/* <Form.Label>Title:</Form.Label> */}
+            <br />
             <Form.Control
+              className='titlePostInput'
               type="text"
               placeholder="Title..."
               value={title}
@@ -57,9 +59,12 @@ const CreatePost = () => {
             />
           </Form.Group>
         </Form>
-        <Button variant="primary" onClick={createPost}>
-          Create Post
-        </Button>
+        <div className="ButtonContainerPost">
+          <Button className='CreatePostButton' onClick={createPost}>
+            Create Post
+          </Button>
+        </div>
+        <hr />
       </div>
     </div>
   );

@@ -16,9 +16,6 @@ const PowerSwitch = ({ isScanlinesActive, toggleScanlines }) => {
   return (
     <div className="centerContainer">
       <div className="contentWrapper">
-        <div className="polaroid">
-          <figcaption>Retro Mode<br />Switch</figcaption>
-        </div>
         <div className="checkboxGroup">
           <label className="checkboxControl">
             <input

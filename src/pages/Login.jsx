@@ -3,8 +3,8 @@ import { auth, provider } from '../firebase-config';
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({ isAuth, setIsAuth }) => {
-  if (isAuth) {
+const Login = ({ user, setUser }) => {
+  if (user) {
     return null;
   }
 
@@ -12,17 +12,20 @@ const Login = ({ isAuth, setIsAuth }) => {
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((result) => {
-      localStorage.setItem("isAuth", true);
-      setIsAuth(true);
+      const userAuth = result.user;
+      setUser({
+        email: userAuth.email,
+        displayName: userAuth.displayName,
+      });
       navigate('/lokman/blog');
     });
   };
 
   useEffect(() => {
-    if (isAuth) {
+    if (user) {
       navigate('/blog');
     }
-  }, [isAuth, navigate]);
+  }, [user, navigate]);
 
   return (
     <div className='login_page'>

@@ -1,0 +1,59 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+.social-media-links-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10vh;
+  
+}
+
+/* div styles for presentation */
+.button-big
+{
+  margin: 0.5em;
+}
+
+/* General rule */
+.button-big
+{
+  font-size: 2.5em;
+  width: 10.2em;
+  height: 2.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Twitter class and animation */
+.socialContainer
+{
+  color: white;
+  border: 1px solid white;
+}
+
+.socialContainer :any-link{
+  color: white;
+}
+
+.socialContainer:hover
+{
+  animation: SocialAnim 0.4s normal forwards linear;
+  -webkit-animation: SocialAnim 0.4s normal forwards linear;
+}
+@keyframes SocialAnim {
+  50% {
+    background-color: #ff8c00;
+  }
+  100% {
+    background-color: #ff8c00;
+    opacity: 95%;
+    border: 1px solid #ff8c00;
+    color: #fff;
+  }
+}
+
+

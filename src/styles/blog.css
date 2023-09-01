@@ -66,3 +66,55 @@
 .blog_title {
   color: white;
 }
+
+
+/* ========================*/
+
+.UrldeleteSelect{
+  max-width: 500px;
+}
+
+.adminTitle{
+  color: white;
+  text-align: center;
+}
+
+.titlePostInput{
+  background-color: white;
+}
+
+.ButtonContainerPost{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.CreatePostButton{
+  background-color: #ff8c00;
+  padding: 2%;
+  display: flex;
+}
+
+.CreatePostButton:hover{
+  background-color: #ff8c0083;
+}
+
+.PostInfo{
+  color: white;
+}
+
+.UrlButton{
+  background-color: #ff8c00;
+  color: white;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+}
+
+.UrlButton:hover{
+  background-color: #ff8c0083;
+}
+
+.urlTitle{
+  color: white;
+}

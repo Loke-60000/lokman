@@ -10,8 +10,12 @@ import banner_three from '../assets/images/construction_banner.webp'
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
+import { useLanguage } from '../components/LanguageToggle';
+import translations from '../translations.json';
+
 const Introduction = () => {
   const [lastTenPosts, setLastTenPosts] = useState([]);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const fetchLastTenPosts = async () => {
@@ -68,14 +72,14 @@ const Introduction = () => {
           </p>
           <h2>Education</h2>
           <ul>
-            <li>2020: Baccalauréat Générale de Série L - Lycée George Clemenceau</li>
-            <li>2021: Japanese Language Course (6 months) - Tokyo Galaxy, Tokyo, Japan</li>
-            <li>2022-2023: Web Developer and Web Mobile Course - ADRAR</li>
+            <li>2020: Literary baccalaureate - Montpellier, FRANCE</li>
+            <li>2021: Japanese Language Course (6 months) - Tokyo Galaxy - Tokyo, JAPAN</li>
+            <li>2022-2023: Web Developer and Web Mobile Course - ADRAR - Montpellier, FRANCE</li>
             </ul>
             <h2>Work Experience</h2>
             <ul>
             <li>2021: Freelance Illustrator - Providing illustration services via the Fiverr platform.</li>
-            <li>Mission Locale - Participated in an intensive program to facilitate education and employment opportunities.</li>
+            <li>2022-2023: development of several websites (react js, vue js) for restaurants among others</li>
             </ul>
             <h2>Interests</h2>
             <ul>

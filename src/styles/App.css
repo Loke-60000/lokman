@@ -105,3 +105,12 @@ td {
   background: #705e4c;
   text-shadow: 1px 1px 0 #705e4c;
 }
+
+.dashboard{
+  color: white;
+}
+
+
+.errorimg{
+  height: 200px;
+}

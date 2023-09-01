@@ -1,27 +1,49 @@
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase-config';
+import { onSnapshot } from 'firebase/firestore';
+import { collection, doc } from 'firebase/firestore';
+import { auth, db } from '../firebase-config';
 
 const useAuth = () => {
-  const [email, setEmail] = useState('');
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setEmail(user.email);
-        localStorage.setItem('email', user.email);
+    const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
+      if (userAuth) {
+        // If the user logs in via Google, use the displayName from the Google account
+        if (userAuth.providerData[0].providerId === 'google.com') {
+          setUser({
+            email: userAuth.email,
+            displayName: userAuth.displayName,
+          });
+          setLoading(false);
+        } else {
+          const userDocRef = doc(collection(db, 'users'), userAuth.uid);
+
+          const userUnsubscribe = onSnapshot(userDocRef, (doc) => {
+            const userData = doc.data();
+            setUser({
+              email: userAuth.email,
+              displayName: userData?.displayName,
+            });
+            setLoading(false);
+          });
+
+          return () => {
+            userUnsubscribe();
+          };
+        }
       } else {
-        setEmail('');
-        localStorage.removeItem('email');
+        setUser(null);
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
-  return [email, loading];
+  return [user, loading];
 };
 
 export default useAuth;
