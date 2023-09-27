@@ -10,10 +10,28 @@
   --table-bg-image: url('../assets/images/bg_pagebody.webp');
 }
 
-.lokmanlogo{
+.lokmanlogo {
   width: 55%;
   margin-top: 2%;
+  max-width: 500px;  /* Or whatever max size you want */
 }
+
+/* Use a media query to adjust the logo size and position on smaller screens */
+@media (max-width: 768px) {
+  .lokmanlogo {
+    width: 100vw;
+    margin-top: 4%;
+  }
+}
+
+/* Adjust logo size and position on even smaller screens */
+@media (max-width: 480px) {
+  .lokmanlogo {
+    width: 100vw;
+    margin-top: 5%;
+  }
+}
+
 
 .logocontainer{
   width: 1000px;
