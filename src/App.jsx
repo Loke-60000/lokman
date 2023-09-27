@@ -19,6 +19,9 @@ import AmadeusLogin from './pages/Amadeus_login';
 import Dashboard from './pages/Dashboard';
 import Irasuto from './pages/Irasuto';
 import errornotFoundimg from './assets/images/404sketch.png';
+import lokmanLogo from './assets/images/lokmandevlogo.png';
+
+
 
 function NotFound() {
   return (
@@ -56,6 +59,7 @@ function App() {
       >
         <LanguageProvider>
           <Router>
+            <div className="logocontainer"><img src={lokmanLogo} className='lokmanlogo' alt="" srcset="" /></div>
             <div className="table-container">
               <table>
                 <tbody>
@@ -94,12 +98,12 @@ function App() {
             </div>
           </Router>
         </LanguageProvider>
-        {/* <div className="retro-mode-toggle">
+        <div className="retro-mode-toggle">
           <PowerSwitch
             isScanlinesActive={isScanlinesActive}
             toggleScanlines={toggleScanlines}
           />
-        </div> */}
+        </div>
         <div className="copyrights">
           <p>2023 Lokman RAMDANI</p>
         </div>

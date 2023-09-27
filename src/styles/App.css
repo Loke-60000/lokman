@@ -5,9 +5,19 @@
   --table-border-color: #ccc;
   --table-max-width: 1000px;
   --table-cell-padding: 20px;
-  --table-margin-top: 10%;
+  --table-margin-top: 2%;
   --media-query-breakpoint: 767px;
   --table-bg-image: url('../assets/images/bg_pagebody.webp');
+}
+
+.lokmanlogo{
+  width: 55%;
+  margin-top: 2%;
+}
+
+.logocontainer{
+  width: 1000px;
+  margin: auto;
 }
 
 body {
@@ -56,6 +66,7 @@ td {
   justify-content: center;
   margin-top: 20px;
   padding-bottom: 5px;
+  color: black;
 }
 
 .nixie_clock {

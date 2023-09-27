@@ -106,13 +106,13 @@ const Introduction = () => {
           <div className="Projectsicon">
             <h1>Projects</h1>
             <div className="project-container">
-              <Link to="/lokman/projects">
+              <Link to="https://lokman.fr/#/post/ZbJ9NdhxWIlsgVlZ1GFc">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
                 <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
               </Link>
             </div>
             <div className="project-container">
-              <Link to="/lokman/projects">
+              <Link to="https://github.com/Loke-60000/Atto-channel">
                 <img className="project_icons" src={Atchan_icon} alt="@Chan" />
                 <span>@Chan (still in development)</span>
               </Link>
