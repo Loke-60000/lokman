@@ -16,11 +16,27 @@
   max-width: 500px;  /* Or whatever max size you want */
 }
 
+.adcontainer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.braunad{
+  width: 30%;
+  margin: 2%;
+  outline: black solid 1.5px;
+}
+
 /* Use a media query to adjust the logo size and position on smaller screens */
 @media (max-width: 768px) {
   .lokmanlogo {
     width: 100vw;
     margin-top: 4%;
+  }
+
+  .braunad{
+    width: 90vw;
   }
 }
 
