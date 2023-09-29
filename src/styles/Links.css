@@ -28,9 +28,6 @@
 }
 
 @media (max-width: 768px) {
-  :root{
-    --table-cell-padding: 0px;
-  }
   .social-media-links-container {
     padding: 0px !important;
 }
@@ -41,7 +38,7 @@
   .button-big
   {
     font-size: 2.5em;
-    width: 90vw;
+    width: 50vw;
     height: 2.2em;
     display: flex;
     justify-content: center;
