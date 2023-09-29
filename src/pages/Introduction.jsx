@@ -9,9 +9,9 @@ import banner_two from '../assets/images/atchan_banner.webp';
 import banner_three from '../assets/images/construction_banner.webp'
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
-
 import { useLanguage } from '../components/LanguageToggle';
-import translations from '../translations.json';
+// import translations from '../translations.json';
+
 
 const Introduction = () => {
   const [lastTenPosts, setLastTenPosts] = useState([]);
@@ -106,7 +106,7 @@ const Introduction = () => {
           <div className="Projectsicon">
             <h1>Projects</h1>
             <div className="project-container">
-              <Link to="https://lokman.fr/#/post/ZbJ9NdhxWIlsgVlZ1GFc">
+              <Link to="https://lokman.fr/post/ZbJ9NdhxWIlsgVlZ1GFc">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
                 <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
               </Link>
