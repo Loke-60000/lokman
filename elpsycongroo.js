@@ -12,12 +12,15 @@ var ua = navigator.userAgent.toLowerCase();
 var date = new Date();
 var hours = date.getHours();
 
-if(ua.indexOf('chrome') != -1) {
-	if (hours % 2 == 0) {
-		console_mayu();
-	} else {
-		console_kuri();
-	}
+// Generate a random number (0 or 1)
+var randomIndex = Math.floor(Math.random() * 2);
+
+if (ua.indexOf('chrome') != -1) {
+  if (randomIndex === 0) {
+    console_mayu();
+  } else {
+    console_kuri();
+  }
 }
 
 function console_mayu(){
