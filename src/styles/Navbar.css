@@ -5,10 +5,10 @@
     --shadow-color: #ff8c00;
   }
   
-  /* This CSS code centers the navigation links and styles them with a hover effect. */
+/* This CSS code centers the navigation links and styles them with a hover effect. */
   
-  /* Center the navigation links horizontally and vertically */
-  .nav-centered {
+/* Center the navigation links horizontally and vertically */
+.nav-centered {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,23 +16,23 @@
     text-align: center;
   }
   
-  /* Invert the color of the navbar toggler icon */
-  .navbar-toggler-icon {
+/* Invert the color of the navbar toggler icon */
+.navbar-toggler-icon {
     filter: invert(1);
   }
   
-  /* Add margin to the navigation links */
-  .nav-centered .nav-link {
+/* Add margin to the navigation links */
+.nav-centered .nav-link {
     margin: 0 10px;
   }
   
-  /* Style the navigation links with the text color variable */
-  .nav-centered .nav-link {
+/* Style the navigation links with the text color variable */
+.nav-centered .nav-link {
     color: var(--text-color);
   }
   
-  /* Override default styles for the visited state of the link */
-  .nav-centered .nav-link:visited {
+/* Override default styles for the visited state of the link */
+.nav-centered .nav-link:visited {
     color: var(--text-color);
   }
   
@@ -41,26 +41,26 @@
     transition: text-shadow 0.2s ease-in-out;
   }
   
-  .nav-centered .nav-link:hover .japanese-text {
+.nav-centered .nav-link:hover .japanese-text {
     color: var(--text-color);
     text-shadow:
         0 0 10px var(--shadow-color),
         0 0 20px var(--shadow-color),
         0 0 30px var(--shadow-color),
-         0 0 40px var(--shadow-color),
+        0 0 40px var(--shadow-color),
         0 0 50px var(--shadow-color),
         0 0 60px var(--shadow-color),
         0 0 70px var(--shadow-color),
         0 0 80px var(--shadow-color);
   }
   
-  /* Add a hover effect to the English text in the navigation links */
-  .nav-centered .nav-link .english-text {
+/* Add a hover effect to the English text in the navigation links */
+.nav-centered .nav-link .english-text {
     transition: color 0.2s ease-in-out;
   }
   
-  /* Override default styles for the hover state of the link */
-  .nav-centered .nav-link:hover {
+/* Override default styles for the hover state of the link */
+.nav-centered .nav-link:hover {
     color: var(--hover-color);
   }
   
