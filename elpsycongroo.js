@@ -12,7 +12,6 @@ var ua = navigator.userAgent.toLowerCase();
 var date = new Date();
 var hours = date.getHours();
 
-// Generate a random number (0 or 1)
 var randomIndex = Math.floor(Math.random() * 2);
 
 if (ua.indexOf('chrome') != -1) {
