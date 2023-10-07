@@ -33,18 +33,22 @@ const Introduction = () => {
       src: banner_one,
       alt: 'Welcome',
       caption: '',
+      link: 'https://lokman.fr/post/firstLink',  // Add link property
     },
     {
       src: banner_two,
       alt: 'atchan coming soon',
       caption: '',
+      link: 'https://lokman.fr/post/secondLink', // Add link property
     },
     {
       src: banner_three,
       alt: 'Third slide',
       caption: '',
+      link: 'https://lokman.fr/post/thirdLink',  // Add link property
     },
   ];
+  
 
   const calculateAge = (birthdate) => {
     const birthDate = new Date(birthdate);

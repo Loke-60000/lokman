@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; // Import Navigate
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import MainNavbar from './components/NavBar';
 import Divergencemeter from './components/DivergenceMeter';
 import { LanguageProvider } from './components/LanguageToggle';
@@ -77,10 +77,7 @@ function App() {
                         <Route path="/contact" element={<ContactPage />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/createpost" element={<Createpost />} />
-                        <Route
-                          path="/login"
-                          element={<Login setIsAuth={setIsAuth} />}
-                        />
+                        <Route path="/login" element={<Login setIsAuth={setIsAuth} />}/>
                         <Route path="/post/:id" element={<PostPage />} />
                         <Route path="/edit/:postId" element={<EditPost />} />
                         <Route path="/moderator" element={<ModeratorPage />} />
@@ -89,7 +86,6 @@ function App() {
                         <Route path="/amadeusHome" element={<AmadeusLogin />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/illustrations" element={<Irasuto />} />
-                        {/* Add a catch-all route for 404 errors */}
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </td>

@@ -22,6 +22,7 @@ const ContactPage = () => {
         message: !message && 'Message is required',
       });
       return;
+
     }
 
     setIsSending(true);

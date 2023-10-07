@@ -7,7 +7,9 @@ const CarouselComponent = ({ images }) => {
     <Carousel className="custom-carousel"> {/* Add the custom-carousel class */}
       {images.map((image, index) => (
         <Carousel.Item key={index}>
-          <img className="d-block w-100" src={image.src} alt={image.alt} />
+          <a href={image.link} target="_blank" rel="noopener noreferrer"> {/* Add this line */}
+            <img className="d-block w-100" src={image.src} alt={image.alt} />
+          </a>
           {image.caption && (
             <Carousel.Caption>
               <h3>{image.caption}</h3>
