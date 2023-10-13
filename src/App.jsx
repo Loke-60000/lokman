@@ -21,6 +21,7 @@ import Irasuto from './pages/Irasuto';
 import errornotFoundimg from './assets/images/404sketch.png';
 import lokmanLogo from './assets/images/lokmandevlogo.webp';
 import BraunAd from './assets/images/braunstoreAdRemake.webp'
+import AmadeusTraining from './pages/AmadeusTraining';
 
 
 
@@ -86,6 +87,7 @@ function App() {
                         <Route path="/amadeusHome" element={<AmadeusLogin />} />
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/illustrations" element={<Irasuto />} />
+                        <Route path="/amadeus/finetuning" element={<AmadeusTraining />} />
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </td>

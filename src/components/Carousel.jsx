@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CarouselComponent = ({ images }) => {
   return (
-    <Carousel className="custom-carousel"> {/* Add the custom-carousel class */}
+    <Carousel className="custom-carousel">
       {images.map((image, index) => (
         <Carousel.Item key={index}>
-          <a href={image.link} target="_blank" rel="noopener noreferrer"> {/* Add this line */}
+          <a href={image.link} target="_blank" rel="noopener noreferrer">
             <img className="d-block w-100" src={image.src} alt={image.alt} />
           </a>
           {image.caption && (

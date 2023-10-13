@@ -25,7 +25,8 @@ function Divergencemeter() {
 
     return (
         <div className="nixie__wrapper">
-            <div className="nixie__mesh"></div>
+            <div className="nixie__mesh">
+            </div>
             <div className="nixie__value">
                 {formattedTime.map((segment, index) => (
                     <React.Fragment key={index}>

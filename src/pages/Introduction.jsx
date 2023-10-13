@@ -12,7 +12,6 @@ import { db } from '../firebase-config';
 import { useLanguage } from '../components/LanguageToggle';
 // import translations from '../translations.json';
 
-
 const Introduction = () => {
   const [lastTenPosts, setLastTenPosts] = useState([]);
   const { language } = useLanguage();
