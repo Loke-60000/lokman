@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <div className="post_list">
           <div className="container">
-            <h1 className='projectsTitle'>Projects</h1>
+            <h1 className='projectsTitle'><span className='ColoredLetter'>P</span>rojects</h1>
             <hr />
             <div className="ProjectIconsOnProjectsPage">
             <div className="project-container">

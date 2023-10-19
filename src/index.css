@@ -195,3 +195,13 @@ button {
 .errorNotFound h1,p{
   color: white;
 }
+
+.irasuto-ImageTable {
+  border-color: black;
+}
+
+.irasuto-ImageTable, .irasuto-ImageTable th, .irasuto-ImageTable td {
+  border: 1px solid transparent; 
+  text-align: left;
+  font-size: larger;
+}

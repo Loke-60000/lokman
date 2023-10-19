@@ -8,7 +8,17 @@
   --table-margin-top: 2%;
   --media-query-breakpoint: 767px;
   --table-bg-image: url('../assets/images/bg_pagebody.webp');
+
 }
+
+.main_content, nav{    
+  
+  font-size: medium;
+  font-family: sans-serif;
+  font-family: 'ＭＳ Ｐゴシック',sans-serif\9;
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;}
 
 .lokmanlogo {
   width: 55%;
@@ -167,14 +177,6 @@ td {
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
 .custom-carousel .carousel-control-prev,
 .custom-carousel .carousel-control-next {
     filter: none; /* remove default shadow if any */
@@ -220,4 +222,41 @@ td {
 
 .project-container {
   margin-bottom: 15px;
+}
+
+
+.Post{
+  font-family: sans-serif;
+  font-family: 'ＭＳ Ｐゴシック',sans-serif\9;
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.Post span{
+  margin-right: 1em;
+}
+
+.ColoredLetter{
+  color: #0877eb;
+}
+
+.PostList{
+  list-style-type: none;
+}
+
+.PostList {
+  display: grid;
+  grid-template-columns: auto 1fr auto; 
+  gap: 8px; 
+  align-items: center; 
+}
+
+.postDate {
+  color: #d26600;
+  text-decoration: none;
+}
+
+.postName {
+  text-decoration: underline;
 }

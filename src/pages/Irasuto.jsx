@@ -32,7 +32,7 @@ const Table = ({ images }) => {
         <table className="irasuto-ImageTable">
             <thead>
                 <tr>
-                    <th className="irasuto-TableHeader">Drawing and Pictures</th>
+                    <th className="irasuto-TableHeader"><span className='ColoredLetter'>D</span>rawing and <span className='ColoredLetter'>P</span>ictures</th>
                 </tr>
             </thead>
             <tbody>

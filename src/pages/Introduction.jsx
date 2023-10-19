@@ -71,27 +71,36 @@ const Introduction = () => {
 
   const age = calculateAge("2001-11-21");
 
+  const isNewPost = (postDate) => {
+    const currentDate = new Date();
+    const postCreationDate = new Date(postDate);
+    const oneMonthInMilliseconds = 30 * 24 * 60 * 60 * 1000;
+
+    return currentDate - postCreationDate < oneMonthInMilliseconds;
+};
+
+
   return (
       <div>
         <CarouselComponent images={carouselImages} />
         <hr />
         <div className="bio-container">
-          <h2>About Me</h2>
+          <h2><span className="ColoredLetter">A</span>bout Me</h2>
           <p>
             Thank you for visiting my personal website! My name is Lokman, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
           </p>
-          <h2>Education</h2>
+          <h2><span className="ColoredLetter">E</span>ducation</h2>
           <ul>
             <li>2020: Literary baccalaureate - Montpellier, FRANCE</li>
             <li>2021: Japanese Language Course (6 months) - Tokyo Galaxy - Tokyo, JAPAN</li>
             <li>2022-2023: Web Developer and Web Mobile Course - ADRAR - Montpellier, FRANCE</li>
             </ul>
-            <h2>Work Experience</h2>
+            <h2><span className="ColoredLetter">W</span>ork Experience</h2>
             <ul>
             <li>2021: Freelance Illustrator - Providing illustration services via the Fiverr platform.</li>
             <li>2022-2023: development of several websites (react js, vue js) for restaurants among others</li>
             </ul>
-            <h2>Interests</h2>
+            <h2><span className="ColoredLetter">I</span>nterests</h2>
             <ul>
             <li>Digital drawing (cartoon, manga)</li>
             <li>Computer technology (hardware and software)</li>
@@ -102,13 +111,13 @@ const Introduction = () => {
         <hr />
         <div className="news-icons-wrapper">
           <div>
-            <h1>News:</h1>
-            <ul>
+            <h1><span className='ColoredLetter'>N</span>ews</h1>
+            <ul className='Post'>
               {lastTenPosts.map((post) => (
-                <li key={post.id}>
-                  <Link to={`/post/${post.id}`}>
-                    {new Date(post.createdAt).toLocaleDateString()} - {post.title}
-                  </Link>
+                <li className='PostList' key={post.id}>
+                  <span className='postDate'>{new Date(post.createdAt).toLocaleDateString()}</span>
+                  <Link to={`/post/${post.id}`} className='postName'>{post.title}</Link>
+                  {isNewPost(post.createdAt) && <span style={{color: '#d26600'}}> [New!]</span>}
                 </li>
               ))}
             </ul>

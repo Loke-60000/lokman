@@ -1,0 +1,16 @@
+.irasuto-ImageTable {
+    border-collapse: collapse; /* Ensures borders are collapsed into single borders */
+    width: 100%; /* Optional, in case you want the table to take the full width */
+}
+
+.irasuto-ImageTable th, .irasuto-ImageTable td {
+    border: none; /* Removes borders from table headers and cells */
+    padding: 8px; /* Optional, to provide some spacing around content */
+    text-align: left; /* Optional, aligns text to the left */
+}
+
+.irasuto-ImageCell img {
+    width: 100%; /* Optional, in case you want the images to take up the full width of the cell */
+    max-width: 400px; /* Optional, to limit the maximum width of the image */
+    height: auto; /* Ensures the aspect ratio of the image is maintained */
+}
