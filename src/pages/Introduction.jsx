@@ -4,9 +4,10 @@ import CarouselComponent from '../components/Carousel';
 import Amadeus_icon from '../assets/images/amadeus.webp';
 import Rakugaki_icon from '../assets/images/rakugaki.webp';
 import Atchan_icon from '../assets/images/atchan.webp';
-import banner_one from '../assets/images/welcome_banner.webp';
-import banner_two from '../assets/images/atchan_banner.webp';
-import banner_three from '../assets/images/construction_banner.webp'
+import banner_one from '../assets/images/WEBSITE_Gadgetlab_website.webp';
+import banner_two from '../assets/images/WEBSITE_bannerr_contactme_1.webp';
+import banner_three from '../assets/images/WEBSITE_bannerr_amadeus_1.webp'
+import banner_four from '../assets/images/atchan_banner.webp'
 import { getDocs, collection, query, orderBy, limit } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { useLanguage } from '../components/LanguageToggle';
@@ -30,21 +31,27 @@ const Introduction = () => {
   const carouselImages = [
     {
       src: banner_one,
-      alt: 'Welcome',
+      alt: 'Get a website!',
       caption: '',
-      link: 'https://lokman.fr/post/firstLink',  // Add link property
+      link: 'https://www.fiverr.com/s/w5EEmr',  
     },
     {
       src: banner_two,
-      alt: 'atchan coming soon',
+      alt: 'Contact me for more informations!',
       caption: '',
-      link: 'https://lokman.fr/post/secondLink', // Add link property
+      link: 'https://lokman.fr/#/contact', 
     },
     {
       src: banner_three,
-      alt: 'Third slide',
+      alt: 'Amadeus Project',
       caption: '',
-      link: 'https://lokman.fr/post/thirdLink',  // Add link property
+      link: 'https://lokman.fr/#/post/sBpyBH39fyK2qWyi0rfu', 
+    },
+    {
+      src: banner_four,
+      alt: 'Atto Channel soon available',
+      caption: '',
+      link: 'https://github.com/Loke-60000/Atto-channel',
     },
   ];
   
@@ -71,7 +78,7 @@ const Introduction = () => {
         <div className="bio-container">
           <h2>About Me</h2>
           <p>
-            Thank you for visiting my personal website! My name is Lokman RAMDANI, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
+            Thank you for visiting my personal website! My name is Lokman, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
           </p>
           <h2>Education</h2>
           <ul>

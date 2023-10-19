@@ -166,3 +166,58 @@ td {
   color: white;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+    filter: none; /* remove default shadow if any */
+}
+
+.custom-carousel::before,
+.custom-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%; /* adjust the width of the shadow as per your preference */
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+.custom-carousel::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+.carousel-control-prev {
+    left: 0;
+    z-index: 2;
+}
+
+.carousel-control-next {
+    right: 0;
+    z-index: 2;
+}
+
+
+
+.news-icons-wrapper li {
+  margin-bottom: 10px; 
+}
+
+.news-icons-wrapper h1 {
+  margin-bottom: 15px;
+}
+
+
+.project-container {
+  margin-bottom: 15px;
+}
