@@ -123,7 +123,7 @@ const Introduction = () => {
             </ul>
           </div>
           <div className="Projectsicon">
-            <h1>Projects</h1>
+            <h1 className='ProjectTitleIntro'><span className="ColoredLetter">P</span>rojects</h1>
             <div className="project-container">
               <Link to="https://lokman.fr/post/ZbJ9NdhxWIlsgVlZ1GFc">
                 <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />

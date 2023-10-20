@@ -23,6 +23,10 @@ function Divergencemeter() {
         time.getMilliseconds().toString().padStart(3, '0')
     ];
 
+    // Assuming the decorative numbers you want to add are '1234567890'
+    const decorativeNumbers = '0';
+    const decorativeNumbersLayer2 = '0';
+
     return (
         <div className="nixie__wrapper">
             <div className="nixie__mesh">
@@ -32,14 +36,26 @@ function Divergencemeter() {
                     <React.Fragment key={index}>
                         {segment.split('').map((digit, digitIndex) => (
                             <span key={digitIndex} className="nixie__digit-container">
+                                <span className="nixie__decorative-number">
+                                    {decorativeNumbers[digitIndex % decorativeNumbers.length]}
+                                </span>
+                                <span className="nixie__decorative-number-layer2">
+                                    {decorativeNumbersLayer2[digitIndex % decorativeNumbersLayer2.length]}
+                                </span>
                                 <span className="nixie__digit">{digit}</span>
                                 <span className="nixie__number-background" style={{ backgroundImage: `url(${tubeImage})` }}></span>
                             </span>
                         ))}
                         {index < formattedTime.length - 1 && (
                             <span className="nixie__digit-container">
-                                <span className="nixie__number-background" style={{ backgroundImage: `url(${tubeImage})` }}></span>
+                                <span className="nixie__decorative-number">
+                                    {decorativeNumbers[0]}
+                                </span>
+                                <span className="nixie__decorative-number-layer2">
+                                    {decorativeNumbersLayer2[0]}
+                                </span>
                                 <span className="nixie__dot">.</span>
+                                <span className="nixie__number-background" style={{ backgroundImage: `url(${tubeImage})` }}></span>
                             </span>
                         )}
                     </React.Fragment>

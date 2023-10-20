@@ -13,6 +13,16 @@
   src: url('../assets/fonts/BONX-AltMedium.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'BONX-Silhouette';
+  src: url('../assets/fonts/BONX-Silhouette.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BONX-Frame';
+  src: url('../assets/fonts/BONX-Frame.otf') format('opentype');
+}
+
 .nixie__value {
   font-family: 'BONX-Medium', sans-serif;
   text-align: center;
@@ -40,17 +50,18 @@
 
 .nixie__digit {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   margin: 2px;
   font-size: 48px;
   line-height: 1;
   animation: flicker 0.2s infinite alternate;
+  
 }
 
 .nixie__dot {
   font-family: 'BONX-AltMedium', sans-serif;
   position: relative;
-  z-index: 1;
+  z-index: 4;
   margin: 2.5px;
   font-size: 48px;
   line-height: 1;
@@ -72,5 +83,48 @@
   }
   50% {
     opacity: 0.9;
+  }
+}
+
+.nixie__decorative-number,
+.nixie__decorative-number-layer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2px; 
+  font-size: 48px;
+  line-height: 1; 
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nixie__decorative-number {
+  font-family: 'BONX-Frame', sans-serif;
+  position: absolute;
+  margin: 2px;
+  font-size: 48px;
+  line-height: 1;
+  z-index: 100;
+  margin: 2px; 
+  font-size: 40px;
+  line-height: 1; 
+  color: #341813;
+  text-shadow: none;
+}
+
+.nixie__decorative-number-layer2 {
+  font-family: 'BONX-Silhouette', sans-serif; 
+  position: absolute;
+  z-index: 3;
+  margin: 2px; 
+  font-size: 45px;
+  line-height: 1; 
+  color: #934624;
+  text-shadow: none; 
+  opacity: 0.5;
+}
+
+@media (max-width: 480px) {
+  .nixie__digit, .nixie__dot, .nixie__decorative-number, .nixie__decorative-number-layer2 {
+    font-size: 24px; 
   }
 }
