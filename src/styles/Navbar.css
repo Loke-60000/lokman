@@ -1,66 +1,99 @@
 /* Define variables for the colors used in the navigation links */
 :root {
-    --text-color: #fff;
-    --hover-color: #ff8c00;
-    --shadow-color: #ff8c00;
-  }
-  
-/* This CSS code centers the navigation links and styles them with a hover effect. */
-  
+  --text-color: #fff;
+  --hover-color: #ff8c00;
+  --shadow-color: #ff8c00;
+}
+
 /* Center the navigation links horizontally and vertically */
 .nav-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
 /* Invert the color of the navbar toggler icon */
 .navbar-toggler-icon {
-    filter: invert(1);
-  }
-  
-/* Add margin to the navigation links */
-.nav-centered .nav-link {
-    margin: 0 10px;
-  }
-  
+  filter: invert(1);
+}
+
 /* Style the navigation links with the text color variable */
-.nav-centered .nav-link {
-    color: var(--text-color);
-  }
-  
+.nav-centered .nav-link, .nav-centered .dropdown-item {
+  color: var(--text-color);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
 /* Override default styles for the visited state of the link */
-.nav-centered .nav-link:visited {
-    color: var(--text-color);
-  }
-  
-  /* Add a hover effect to the Japanese text in the navigation links */
-  .nav-centered .nav-link .japanese-text {
-    transition: text-shadow 0.2s ease-in-out;
-  }
-  
-.nav-centered .nav-link:hover .japanese-text {
-    color: var(--text-color);
-    text-shadow:
-        0 0 10px var(--shadow-color),
-        0 0 20px var(--shadow-color),
-        0 0 30px var(--shadow-color),
-        0 0 40px var(--shadow-color),
-        0 0 50px var(--shadow-color),
-        0 0 60px var(--shadow-color),
-        0 0 70px var(--shadow-color),
-        0 0 80px var(--shadow-color);
-  }
-  
-/* Add a hover effect to the English text in the navigation links */
-.nav-centered .nav-link .english-text {
-    transition: color 0.2s ease-in-out;
-  }
-  
+.nav-centered .nav-link:visited, .nav-centered .dropdown-item:visited {
+  color: var(--text-color);
+}
+
+/* Japanese text hover effect */
+.nav-centered .nav-link .japanese-text, .nav-centered .dropdown-item .japanese-text {
+  transition: text-shadow 0.2s ease-in-out;
+}
+
+.nav-centered .nav-link:hover .japanese-text, .nav-centered .dropdown-item:hover .japanese-text {
+  color: var(--text-color);
+  text-shadow:
+      0 0 10px var(--shadow-color),
+      0 0 20px var(--shadow-color),
+      0 0 30px var(--shadow-color),
+      0 0 40px var(--shadow-color),
+      0 0 50px var(--shadow-color),
+      0 0 60px var(--shadow-color),
+      0 0 70px var(--shadow-color),
+      0 0 80px var(--shadow-color);
+}
+
+/* English text hover effect */
+.nav-centered .nav-link .english-text, .nav-centered .dropdown-item .english-text {
+  transition: color 0.2s ease-in-out;
+}
+
 /* Override default styles for the hover state of the link */
-.nav-centered .nav-link:hover {
-    color: var(--hover-color);
-  }
-  
+.nav-centered .nav-link:hover, .nav-centered .dropdown-item:hover {
+  color: var(--hover-color);
+}
+
+/* Portfolio hover-triggered dropdown */
+.portfolio-hover {
+  position: relative;
+}
+
+/* Dropdown styling */
+.portfolio-dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  padding-right: 27px;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* High z-index to appear over everything */
+  width: 200px; /* Set width to ensure it's visually clear */
+}
+
+/* Display dropdown on hover for desktop and on click for mobile */
+.portfolio-hover:hover .portfolio-dropdown,
+.portfolio-dropdown.show {
+  display: block;
+}
+
+/* Style the sublinks */
+.portfolio-dropdown .dropdown-item {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.portfolio-dropdown .dropdown-item:hover {
+  background-color: var(--hover-color);
+  color: white;
+}

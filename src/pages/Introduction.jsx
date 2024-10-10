@@ -41,12 +41,12 @@ const Introduction = () => {
       caption: '',
       link: 'https://lokman.fr/#/contact', 
     },
-    {
-      src: banner_three,
-      alt: 'Amadeus Project',
-      caption: '',
-      link: 'https://lokman.fr/#/post/sBpyBH39fyK2qWyi0rfu', 
-    },
+    // {
+    //   src: banner_three,
+    //   alt: 'Amadeus Project',
+    //   caption: '',
+    //   link: 'https://lokman.fr/#/post/sBpyBH39fyK2qWyi0rfu', 
+    // },
     {
       src: banner_four,
       alt: 'Atto Channel soon available',
@@ -87,25 +87,30 @@ const Introduction = () => {
         <div className="bio-container">
           <h2><span className="ColoredLetter">A</span>bout Me</h2>
           <p>
-            Thank you for visiting my personal website! My name is Lokman, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of web development.
+            Thank you for visiting my personal website! My name is Lokman, and I'm a {age} year-old web developer who's passionate about the digital world. After obtaining a literary baccalaureate and studying the Japanese language abroad, I made the decision to reorient my career and focus on the field of development and computer science in general.
+            Everyday I learn more and more, and I'm always looking for new challenges to overcome. I'm currently studying at Simplon by Microsoft in Montpellier, France, and I'm looking forward to working on exciting projects in the future.
           </p>
           <h2><span className="ColoredLetter">E</span>ducation</h2>
           <ul>
             <li>2020: Literary baccalaureate - Montpellier, FRANCE</li>
             <li>2021: Japanese Language Course (6 months) - Tokyo Galaxy - Tokyo, JAPAN</li>
             <li>2022-2023: Web Developer and Web Mobile Course - ADRAR - Montpellier, FRANCE</li>
+            <li>2024: AI & DATA developpement Course - Simplon by MICROSOFT - Bachelor'S degree (bac +3) - Montpellier, FRANCE</li>
             </ul>
             <h2><span className="ColoredLetter">W</span>ork Experience</h2>
             <ul>
-            <li>2021: Freelance Illustrator - Providing illustration services via the Fiverr platform.</li>
+            <li>2021: Freelance Illustrator & designer - Providing illustration services via the Fiverr platform.</li>
             <li>2022-2023: development of several websites (react js, vue js) for restaurants among others</li>
+            <li>2023 Reviewing performance, responsivity and code quality on local associations's websites</li>
+            <li>2023: Designer for Web development & marketing agency - Spain</li>
+            <li>2024: Creation of a web application implementing AI workflows, model finetuning and inference - France</li>
             </ul>
             <h2><span className="ColoredLetter">I</span>nterests</h2>
             <ul>
-            <li>Digital drawing (cartoon, manga)</li>
             <li>Computer technology (hardware and software)</li>
             <li>Social media activities: sharing illustrations, streaming</li>
-            <li>Traveling: I've been to Japan and Germany.</li>
+            <li>Traveling: I've been to Japan, Spain and Germany.</li>
+            <li>Digital drawing</li>
           </ul>
         </div>
         <hr />
@@ -125,12 +130,6 @@ const Introduction = () => {
           <div className="Projectsicon">
             <h1 className='ProjectTitleIntro'><span className="ColoredLetter">P</span>rojects</h1>
             <div className="project-container">
-              <Link to="https://lokman.fr/post/ZbJ9NdhxWIlsgVlZ1GFc">
-                <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
-                <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
-              </Link>
-            </div>
-            <div className="project-container">
               <Link to="https://github.com/Loke-60000/Atto-channel">
                 <img className="project_icons" src={Atchan_icon} alt="@Chan" />
                 <span>@Chan (still in development)</span>
@@ -140,6 +139,12 @@ const Introduction = () => {
               <Link to="/lokman/projects">
                 <img className="project_icons" src={Rakugaki_icon} alt="Rakugaki" />
                 <span>Rakugaki</span>
+              </Link>
+            </div>
+            <div className="project-container">
+              <Link to="https://lokman.fr/post/ZbJ9NdhxWIlsgVlZ1GFc">
+                <img className="project_icons" src={Amadeus_icon} alt="Amadeus Fan-Project Realisation 2.0" />
+                <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
               </Link>
             </div>
           </div>
