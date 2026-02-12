@@ -1,34 +1,40 @@
-    import React, { useContext } from 'react';
+"use client";
 
-    const LanguageContext = React.createContext();
+import React, { createContext, useContext, useState } from "react";
 
-    export const useLanguage = () => {
-        return useContext(LanguageContext);
-    };
+const LanguageContext = createContext();
 
-    export const LanguageProvider = ({ children }) => {
-        const [language, setLanguage] = React.useState('en');
+export const useLanguage = () => {
+  return useContext(LanguageContext);
+};
 
-        const toggleLanguage = () => {
-            setLanguage((currentLanguage) => (currentLanguage === 'en' ? 'fr' : 'en'));
-        };
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState("en");
 
-        const value = {
-            language,
-            toggleLanguage,
-        };
+  const toggleLanguage = () => {
+    setLanguage((currentLanguage) =>
+      currentLanguage === "en" ? "fr" : "en"
+    );
+  };
 
-        return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
-    };
+  const value = {
+    language,
+    toggleLanguage,
+  };
 
-    const LanguageToggle = () => {
-        const { toggleLanguage } = useLanguage();
+  return (
+    <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
+  );
+};
 
-        return (
-            <button onClick={toggleLanguage} className="language-toggle">
-                Toggle Language
-            </button>
-        );
-    };
+const LanguageToggle = () => {
+  const { toggleLanguage } = useLanguage();
 
-    export default LanguageToggle;
+  return (
+    <button onClick={toggleLanguage} className="language-toggle">
+      Toggle Language
+    </button>
+  );
+};
+
+export default LanguageToggle;
