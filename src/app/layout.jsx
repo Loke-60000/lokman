@@ -1,5 +1,4 @@
 import "~/styles/globals.css";
-import { TRPCReactProvider } from "~/trpc/react";
 import ClientLayout from "~/components/ClientLayout";
 import Script from "next/script";
 
@@ -86,9 +85,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(agentContext) }}
         />
 
-        <TRPCReactProvider>
-          <ClientLayout>{children}</ClientLayout>
-        </TRPCReactProvider>
+        <ClientLayout>{children}</ClientLayout>
         <Script src="/elpsycongroo.js" strategy="lazyOnload" />
       </body>
     </html>

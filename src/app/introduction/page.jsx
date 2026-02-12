@@ -97,30 +97,20 @@ const Introduction = () => {
         </h2>
         <ul>
           <li>2021: Japanese Language Course - Tokyo, JAPAN</li>
-          <li>
-            2022-2023: Web &amp; Mobile Development Course - FRANCE
-          </li>
-          <li>
-            2024: AI &amp; Data Development Course - FRANCE
-          </li>
+          <li>2022-2023: Web &amp; Mobile Development Course - FRANCE</li>
+          <li>2024: AI &amp; Data Development Course - FRANCE</li>
         </ul>
         <h2>
           <span className="ColoredLetter">W</span>ork Experience
         </h2>
         <ul>
+          <li>2021: Freelance Illustrator &amp; Designer</li>
           <li>
-            2021: Freelance Illustrator &amp; Designer
+            2022-2023: Development of several websites (React, Vue) for various
+            clients
           </li>
-          <li>
-            2022-2023: Development of several websites (React, Vue) for
-            various clients
-          </li>
-          <li>
-            2023: Code review &amp; performance audits on client websites
-          </li>
-          <li>
-            2023: Designer for a Web development &amp; marketing agency
-          </li>
+          <li>2023: Code review &amp; performance audits on client websites</li>
+          <li>2023: Designer for a Web development &amp; marketing agency</li>
           <li>
             2024: Development of a web application implementing AI workflows,
             model finetuning and inference
@@ -148,7 +138,7 @@ const Introduction = () => {
                 <span className="postDate">
                   {new Date(post.createdAt).toLocaleDateString()}
                 </span>
-                <Link href={`/post/${post.id}`} className="postName">
+                <Link href={`/post?id=${post.id}`} className="postName">
                   {post.title}
                 </Link>
                 {isNewPost(post.createdAt) && (
@@ -185,7 +175,7 @@ const Introduction = () => {
             </Link>
           </div>
           <div className="project-container">
-            <Link href="/post/ZbJ9NdhxWIlsgVlZ1GFc">
+            <Link href="/post?id=ZbJ9NdhxWIlsgVlZ1GFc">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="project_icons"

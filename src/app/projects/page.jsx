@@ -14,7 +14,7 @@ const Projects = () => {
         <hr />
         <div className="ProjectIconsOnProjectsPage">
           <div className="project-container">
-            <Link href="/post/ZbJ9NdhxWIlsgVlZ1GFc">
+            <Link href="/post?id=ZbJ9NdhxWIlsgVlZ1GFc">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="project_icons"

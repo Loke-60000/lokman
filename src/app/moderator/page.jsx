@@ -201,7 +201,7 @@ const ModeratorPage = () => {
         <h1 className="adminTitle">Post created</h1>
         {postLists.map((post) => (
           <div className="post" key={post.id}>
-            <Link href={`/post/${post.id}`}>
+            <Link href={`/post?id=${post.id}`}>
               <h1>{post.title}</h1>
             </Link>
             <h3 className="PostInfo">@{post.author.name}</h3>
@@ -210,7 +210,7 @@ const ModeratorPage = () => {
             </p>
             {isAdmin && (
               <>
-                <Link href={`/edit/${post.id}`}>
+                <Link href={`/edit?postId=${post.id}`}>
                   <button>Edit</button>
                 </Link>
                 <button onClick={() => openModal(post.id)}>Delete</button>

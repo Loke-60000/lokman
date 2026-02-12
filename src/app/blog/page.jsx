@@ -50,7 +50,7 @@ const Blog = () => {
               >
                 {new Date(post.createdAt).toLocaleString()}
               </p>
-              <Link href={`/post/${post.id}`}>
+              <Link href={`/post?id=${post.id}`}>
                 <h1 style={{ margin: 0, marginRight: "8px" }}>{post.title}</h1>
               </Link>
               {isNewPost(post.createdAt) && (
