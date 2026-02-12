@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "images:build": "node scripts/convert-images-to-webp.mjs"
+    "images:build": "node scripts/convert-images-to-webp.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.11.0",

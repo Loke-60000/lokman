@@ -29,3 +29,5 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+nohup.out
+public/images-backup/

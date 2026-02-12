@@ -57,6 +57,9 @@ export default function ClientLayout({ children }) {
               src="/images/lokmandevlogo.webp"
               className="lokmanlogo"
               alt=""
+              width={1000}
+              height={549}
+              fetchPriority="high"
             />
           </div>
           <div className="table-container">
@@ -80,6 +83,9 @@ export default function ClientLayout({ children }) {
             src="/images/braunstoreAdRemake.webp"
             className="braunad"
             alt=""
+            width={1500}
+            height={375}
+            loading="lazy"
           />
         </div>
         <div className="retro-mode-toggle">

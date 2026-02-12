@@ -159,6 +159,9 @@ const Introduction = () => {
                 className="project_icons"
                 src="/images/atchan.webp"
                 alt="@Chan"
+                width={500}
+                height={300}
+                loading="lazy"
               />
               <span>@Chan (still in development)</span>
             </Link>
@@ -170,6 +173,9 @@ const Introduction = () => {
                 className="project_icons"
                 src="/images/rakugaki.webp"
                 alt="Rakugaki"
+                width={500}
+                height={300}
+                loading="lazy"
               />
               <span>Rakugaki</span>
             </Link>
@@ -181,6 +187,9 @@ const Introduction = () => {
                 className="project_icons"
                 src="/images/amadeus.webp"
                 alt="Amadeus Fan-Project Realisation 2.0"
+                width={500}
+                height={300}
+                loading="lazy"
               />
               <span>Fan-Project: Amadeus Reborn (name subject to change)</span>
             </Link>

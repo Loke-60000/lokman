@@ -7,39 +7,42 @@
 @tailwind utilities;
 
 /* ── Font Imports ─────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+/* Moved to <link> tags in layout.jsx for better loading performance */
 
 @font-face {
   font-family: "test";
   src: url("/fonts/MS-PGothic.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BONX-Bold";
   src: url("/fonts/BONX-Bold.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BONX-Medium";
   src: url("/fonts/BONX-Medium.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BONX-AltMedium";
   src: url("/fonts/BONX-AltMedium.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BONX-Silhouette";
   src: url("/fonts/BONX-Silhouette.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BONX-Frame";
   src: url("/fonts/BONX-Frame.otf") format("opentype");
+  font-display: swap;
 }
 
 /* ── CSS Variables ────────────────────────── */
@@ -119,6 +122,7 @@ nav {
 .table-container {
   width: 100%;
   margin-top: var(--table-margin-top);
+  contain: layout style;
 }
 
 table {
@@ -152,6 +156,8 @@ td {
   width: 55%;
   margin-top: 2%;
   max-width: 500px;
+  aspect-ratio: 1000 / 549;
+  height: auto;
 }
 
 .adcontainer {
@@ -164,6 +170,8 @@ td {
   width: 30%;
   margin: 2%;
   outline: black solid 1.5px;
+  aspect-ratio: 1500 / 375;
+  height: auto;
 }
 
 .copyrights p {
@@ -294,6 +302,12 @@ td {
   border: 2px solid white;
 }
 
+.custom-carousel .carousel-item img {
+  aspect-ratio: 1500 / 333;
+  object-fit: cover;
+  height: auto;
+}
+
 .custom-carousel::before,
 .custom-carousel::after {
   content: "";
@@ -392,6 +406,8 @@ td {
 
 .project_icons {
   height: 150px;
+  width: auto;
+  aspect-ratio: 5 / 3;
   border: solid 2px var(--white-color);
 }
 

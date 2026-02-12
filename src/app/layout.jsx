@@ -38,6 +38,45 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical font to reduce FCP/LCP */}
+        <link
+          rel="preload"
+          href="/fonts/MS-PGothic.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        {/* Preconnect to Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* Google Fonts — loaded as link tags instead of CSS @import for faster rendering */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
+          rel="stylesheet"
+        />
+        {/* Font Awesome — loaded with print media trick to prevent render blocking */}
+        <link
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          media="print"
+          onLoad="this.media='all'"
+        />
+        {/* Preconnect to Firebase */}
+        <link rel="preconnect" href="https://firestore.googleapis.com" />
+      </head>
       <body>
         <noscript>
           <section
