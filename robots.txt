@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /images/
+Allow: /images/lokmandevlogo.webp
+
+Sitemap: https://lokman.fr/sitemap.xml
