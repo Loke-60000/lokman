@@ -1,16 +1,20 @@
-// components/PowerSwitch.js
-import React, { useEffect } from 'react';
-import switchAudio from '../assets/sounds/audio_switch_effect.mp3';
+"use client";
+
+import React, { useEffect } from "react";
+
+const switchAudio = "/audio_switch_effect.mp3";
 
 const PowerSwitch = ({ isScanlinesActive, toggleScanlines }) => {
   useEffect(() => {
     const snd = new Audio(switchAudio);
-    document.addEventListener('change', (e) => {
-      if (e.target.parentNode.className.indexOf('checkboxControl') !== -1) {
+    const handler = (e) => {
+      if (e.target.parentNode?.className?.indexOf("checkboxControl") !== -1) {
         snd.currentTime = 0;
         snd.play();
       }
-    });
+    };
+    document.addEventListener("change", handler);
+    return () => document.removeEventListener("change", handler);
   }, []);
 
   return (

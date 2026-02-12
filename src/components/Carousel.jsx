@@ -1,6 +1,7 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
+
+import React from "react";
+import { Carousel } from "react-bootstrap";
 
 const CarouselComponent = ({ images }) => {
   return (
@@ -8,6 +9,7 @@ const CarouselComponent = ({ images }) => {
       {images.map((image, index) => (
         <Carousel.Item key={index}>
           <a href={image.link} target="_blank" rel="noopener noreferrer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="d-block w-100" src={image.src} alt={image.alt} />
           </a>
           {image.caption && (

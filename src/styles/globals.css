@@ -1,0 +1,475 @@
+/* ============================================
+   Global Styles — Shared across all pages
+   ============================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Font Imports ─────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+@font-face {
+  font-family: "test";
+  src: url("/fonts/MS-PGothic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BONX-Bold";
+  src: url("/fonts/BONX-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BONX-Medium";
+  src: url("/fonts/BONX-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BONX-AltMedium";
+  src: url("/fonts/BONX-AltMedium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BONX-Silhouette";
+  src: url("/fonts/BONX-Silhouette.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "BONX-Frame";
+  src: url("/fonts/BONX-Frame.otf") format("opentype");
+}
+
+/* ── CSS Variables ────────────────────────── */
+:root {
+  /* Layout */
+  --main-bg-color: whitesmoke;
+  --table-border-color: #ccc;
+  --table-max-width: 1000px;
+  --table-cell-padding: 20px;
+  --table-margin-top: 2%;
+  --media-query-breakpoint: 767px;
+  --table-bg-image: url("/images/bg_pagebody.webp");
+
+  /* Navbar */
+  --text-color: #fff;
+  --hover-color: #ff8c00;
+  --shadow-color: #ff8c00;
+
+  /* Shared colors */
+  --white-color: #fff;
+  --border-color: #ffff;
+}
+
+/* ── Base / Reset ─────────────────────────── */
+body {
+  background-image: url("/images/bg_body.webp");
+  background-repeat: repeat;
+  font-family: test;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.navbar,
+.navbar-nav,
+.nav-link {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  opacity: 1;
+}
+
+/* ── Layout Shell ─────────────────────────── */
+.App {
+  height: 100vh;
+}
+
+.main_content,
+nav {
+  font-size: small;
+  font-family: test;
+  line-height: 1.8;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.table-container {
+  width: 100%;
+  margin-top: var(--table-margin-top);
+}
+
+table {
+  width: 100%;
+  max-width: var(--table-max-width);
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid var(--table-border-color);
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0)),
+    var(--table-bg-image);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+td {
+  vertical-align: top;
+  padding: var(--table-cell-padding);
+  border: 1px solid var(--table-border-color);
+}
+
+/* ── Logo & Branding ──────────────────────── */
+.logocontainer {
+  width: 1000px;
+  margin: auto;
+}
+
+.lokmanlogo {
+  width: 55%;
+  margin-top: 2%;
+  max-width: 500px;
+}
+
+.adcontainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.braunad {
+  width: 30%;
+  margin: 2%;
+  outline: black solid 1.5px;
+}
+
+.copyrights p {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  color: black;
+}
+
+/* ── Nixie Clock Wrapper ──────────────────── */
+.nixie_clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Retro Toggle & Buttons ───────────────── */
+.retro-mode-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.retroButton {
+  background: #fff;
+  border: 2px solid #4c3a2e;
+  border-radius: 4px;
+  color: #4c3a2e;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #fff;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.retroButton:hover {
+  background: #f5f5f5;
+  text-shadow: 1px 1px 0 #f5f5f5;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8),
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 2px rgba(0, 0, 0, 0.3),
+    0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.retroButton-off {
+  background: #4c3a2e;
+  border: 2px solid #4c3a2e;
+  color: #fff;
+  text-shadow: 1px 1px 0 #4c3a2e;
+}
+
+.retroButton-off:hover {
+  background: #705e4c;
+  text-shadow: 1px 1px 0 #705e4c;
+}
+
+/* ── Shared Utilities ─────────────────────── */
+.ColoredLetter {
+  color: #0877eb;
+}
+
+.dashboard {
+  color: white;
+}
+
+.AmadeusTrainingExpl {
+  color: white;
+  text-align: center;
+}
+
+.post_list {
+  color: white;
+  min-height: 100vh;
+}
+
+/* ── Bootstrap Overrides: Modal ───────────── */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+/* ── Bootstrap Overrides: Carousel ────────── */
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next {
+  filter: none;
+  opacity: 0;
+}
+
+.custom-carousel .carousel-indicators {
+  opacity: 0;
+}
+
+.custom-carousel {
+  border: 2px solid white;
+}
+
+.custom-carousel::before,
+.custom-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+
+.custom-carousel::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.carousel-control-prev {
+  left: 0;
+  z-index: 2;
+}
+
+.carousel-control-next {
+  right: 0;
+  z-index: 2;
+}
+
+/* ── Shared Post Styles ───────────────────── */
+.Post {
+  font-family: sans-serif;
+  font-family: "test";
+  line-height: 1.5;
+  word-break: break-all;
+  word-wrap: break-word;
+  font-size: small;
+}
+
+.Post span {
+  margin-right: 1em;
+}
+
+.PostList {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.postDate {
+  color: #d26600;
+  text-decoration: none;
+}
+
+.postName {
+  text-decoration: underline;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.post p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.PostInfo {
+  color: white;
+}
+
+.post-page {
+  color: white;
+}
+
+/* ── Shared Project Styles ────────────────── */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 250px;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+
+.project_icons {
+  height: 150px;
+  border: solid 2px var(--white-color);
+}
+
+/* ── Error / Not Found ────────────────────── */
+.errorNotFound {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.errorNotFound h1,
+.errorNotFound p {
+  color: white;
+}
+
+.errorimg {
+  height: 200px;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+  .lokmanlogo {
+    width: 100vw;
+    margin-top: 4%;
+  }
+
+  .braunad {
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  ul.Post {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .Post {
+    font-size: 14px;
+  }
+
+  .PostList {
+    font-size: 12px;
+  }
+
+  .postDate {
+    font-size: 10px;
+  }
+
+  .postName {
+    font-size: 12px;
+  }
+
+  .main_content,
+  nav {
+    font-size: medium;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.8;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .lokmanlogo {
+    width: 100vw;
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: var(--media-query-breakpoint)) {
+  table {
+    width: 100%;
+  }
+}

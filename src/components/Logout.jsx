@@ -1,20 +1,22 @@
-import React from 'react';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase-config';
-import { useNavigate } from 'react-router-dom';
+"use client";
+
+import React from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "~/lib/firebase-config";
+import { useRouter } from "next/navigation";
 
 const Logout = ({ isAuth, setIsAuth }) => {
-  let navigate = useNavigate();
+  const router = useRouter();
 
   const signUserOut = () => {
     signOut(auth)
       .then(() => {
         localStorage.clear();
-        setIsAuth(false);
-        navigate('/lokman/blog');
+        if (setIsAuth) setIsAuth(false);
+        router.push("/blog");
       })
       .catch((error) => {
-        console.error('Sign out error:', error);
+        console.error("Sign out error:", error);
       });
   };
 

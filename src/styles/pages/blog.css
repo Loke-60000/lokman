@@ -1,0 +1,98 @@
+/* ============================================
+   Blog / Post / Admin Page Styles
+   ============================================ */
+
+.blog_title {
+  color: white;
+}
+
+/* ── Quill Editor Overrides ── */
+.ql-container {
+  min-height: 300px;
+  background-color: #ffffff;
+  color: black;
+  margin-bottom: 5%;
+}
+
+.ql-toolbar {
+  background-color: #ffffff;
+  color: black;
+}
+
+.ql-editor p {
+  color: black;
+}
+
+/* ── Admin / Create Post ── */
+.adminTitle {
+  color: white;
+  text-align: center;
+}
+
+.createPostPage {
+  color: white;
+}
+
+.cpContainer {
+  color: white;
+}
+
+.titlePostInput {
+  background-color: white;
+}
+
+.ButtonContainerPost {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.CreatePostButton {
+  background-color: #ff8c00;
+  padding: 2%;
+  display: flex;
+}
+
+.CreatePostButton:hover {
+  background-color: #ff8c0083;
+}
+
+/* ── URL Management ── */
+.UrldeleteSelect {
+  max-width: 500px;
+}
+
+.UrlButton {
+  background-color: #ff8c00;
+  color: white;
+  border-radius: 5px;
+  padding: 2%;
+  display: flex;
+}
+
+.UrlButton:hover {
+  background-color: #ff8c0083;
+}
+
+.urlTitle {
+  color: white;
+}
+
+/* ── Login ── */
+.login_page {
+  color: white;
+  text-align: center;
+}
+
+.login-with-google-btn {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.login-with-google-btn:hover {
+  background-color: #ff8c0083;
+}
