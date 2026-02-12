@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "~/lib/firebase-config";
@@ -47,5 +47,9 @@ const PostPage = () => {
 };
 
 export default function PostPageRoute() {
-  return <PostPage />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PostPage />
+    </Suspense>
+  );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from "~/lib/firebase-config";
@@ -86,5 +86,9 @@ const EditPost = () => {
 };
 
 export default function EditPostPage() {
-  return <EditPost />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EditPost />
+    </Suspense>
+  );
 }
