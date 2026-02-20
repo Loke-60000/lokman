@@ -2,10 +2,6 @@
    Global Styles — Shared across all pages
    ============================================ */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ── Font Imports ─────────────────────────── */
 /* Moved to <link> tags in layout.jsx for better loading performance */
 

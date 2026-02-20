@@ -71,8 +71,7 @@ export default function RootLayout({ children }) {
         <link
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
           rel="stylesheet"
-          media="print"
-          onLoad="this.media='all'"
+          media="all"
         />
         {/* Preconnect to Firebase */}
         <link rel="preconnect" href="https://firestore.googleapis.com" />
