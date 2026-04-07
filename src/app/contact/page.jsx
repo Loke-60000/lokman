@@ -1,76 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import React from "react";
 import "~/styles/pages/contact.css";
 
 const ContactPage = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState({});
-  const [isSending, setIsSending] = useState(false);
-  const [isSent, setIsSent] = useState(false);
-  const [sendError, setSendError] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!name || !email || !message) {
-      setErrors({
-        name: !name && "Name is required",
-        email: !email && "Email is required",
-        message: !message && "Message is required",
-      });
-      return;
-    }
-
-    setIsSending(true);
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      phone,
-      subject: subject || "New message from your website",
-      message,
-    };
-
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setIsSending(false);
-          setIsSent(true);
-          setName("");
-          setEmail("");
-          setPhone("");
-          setSubject("");
-          setMessage("");
-          setErrors({});
-        },
-        (error) => {
-          console.log(error.text);
-          setIsSending(false);
-          setSendError(
-            "There was an error sending your email. Please try again later.",
-          );
-        },
-      );
-  };
-
   return (
     <div className="container">
       <h1>
         <span className="ColoredLetter">C</span>ontact Me
       </h1>
+      <p style={{ fontSize: "1.2rem", marginTop: "2rem", color: "#e0e0e0" }}>
+        You can reach me at:{" "}
+        <a
+          href="mailto:lokman@viktorchondria.com"
+          style={{ color: "#00d4ff", textDecoration: "none" }}
+        >
+          lokman@viktorchondria.com
+        </a>
+      </p>
+
+      {/* 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -156,6 +105,7 @@ const ContactPage = () => {
           </button>
         </div>
       </form>
+      */}
     </div>
   );
 };

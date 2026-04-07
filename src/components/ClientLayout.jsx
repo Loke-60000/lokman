@@ -31,21 +31,45 @@ export default function ClientLayout({ children }) {
 
   return (
     <div className="App">
-      {/* Film grain overlay — fine fractal noise, stretched to fill viewport */}
+      {/* Image-only dithering/noise filter defs (no full-page overlay) */}
       <svg
-        className="grain-overlay"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
+        width="0"
+        height="0"
+        aria-hidden="true"
+        focusable="false"
+        style={{ position: "absolute" }}
       >
-        <filter id="grain">
+        <filter id="image-dither" x="0%" y="0%" width="100%" height="100%">
+          <feComponentTransfer in="SourceGraphic" result="posterized">
+            <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+            <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+            <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1" />
+            <feFuncA type="identity" />
+          </feComponentTransfer>
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.65"
+            baseFrequency="1.4"
             numOctaves="3"
-            stitchTiles="stitch"
+            seed="7"
+            result="noise"
           />
+          <feColorMatrix
+            in="noise"
+            type="matrix"
+            values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                  0 0 0 0.18 0"
+            result="noiseLow"
+          />
+          <feComposite
+            in="noiseLow"
+            in2="SourceAlpha"
+            operator="in"
+            result="maskedNoise"
+          />
+          <feBlend in="posterized" in2="maskedNoise" mode="multiply" />
         </filter>
-        <rect width="100%" height="100%" filter="url(#grain)" />
       </svg>
       <div
         className={`scanlines ${isScanlinesActive ? "" : "scanlines-inactive"}`}
